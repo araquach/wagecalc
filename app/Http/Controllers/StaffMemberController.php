@@ -14,11 +14,12 @@ class StaffMemberController extends Controller
 	 */
     public function index()
 	{
-		$staffMembers = StaffMember::all();
+		$staffMembersPK = StaffMember::where('salon', 'PK')->get();
+		$staffMembersJAK = StaffMember::where('salon', 'Jakata')->get();
+
+		return view('staff_member.index', compact('staffMembersPK', 'staffMembersJAK'));
 		
-		return view('staff_member.index', compact('staffMembers'));
-		
-		// return dd($staffMembers);
+		// return dd($staffMembersPK);
 	}
 
 	/**

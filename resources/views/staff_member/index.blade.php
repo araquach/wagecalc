@@ -4,37 +4,75 @@
 
 <h1>Staff Members</h1>
 
-<table class="table">
-	<tr>
-		<th>Stylist</th>
-		<th>Birth date</th>
-		<th>Salon</th>
-		<th>Position</th>
-		<th>Holiday Entitlement</th>
-		<th>Basic Wage</th>
-		<th>Hours P/D</th>
-		<th>Days P/W</th>
-		<th>Target Multiplier</th>
-		<th>Commission Value</th>
-	</tr>	
-	@foreach($staffMembers as $staffMember)
-	<tr>
-		<td>{{ $staffMember->first_name }} {{ $staffMember->last_name }}</td>
-		<td>{{ $staffMember->birth_date }}</td>
-		<td>{{ $staffMember->salon }}</td>
-		<td>{{ $staffMember->position }}</td>
-		<td>{{ $staffMember->holiday_entitlement }}</td>
-		<td>{{ $staffMember->basic_wage }}</td>
-		<td>{{ $staffMember->hours_pd }}</td>
-		<td>{{ $staffMember->days_pw }}</td>
-		<td>{{ $staffMember->target_multiplier }}</td>
-		<td>{{ $staffMember->commission_value }}</td>
-	</tr>
+<h2>Jakata</h2>
 
-	@endforeach
+<table class="table">
+	<thead>
+		<tr>
+			<th>Stylist</th>
+			<th>Birth date</th>
+			<th>Salon</th>
+			<th>Position</th>
+			<th>Holiday Entitlement</th>
+			<th>Basic Wage</th>
+			<th>Hours P/D</th>
+			<th>Days P/W</th>
+			<th>Target Multiplier</th>
+			<th>Commission Value</th>
+		</tr>
+	</thead>
+	<tbody>	
+		@foreach($staffMembersJAK as $staffJAK)
+		<tr>
+			<td>{{ $staffJAK->first_name }} {{ $staffJAK->last_name }}</td>
+			<td>{{ $staffJAK->birth_date }}</td>
+			<td>{{ $staffJAK->salon }}</td>
+			<td>{{ $staffJAK->position }}</td>
+			<td>{{ $staffJAK->holiday_entitlement }}</td>
+			<td>£{{ $staffJAK->basic_wage }}</td>
+			<td>{{ $staffJAK->hours_pd }}</td>
+			<td>{{ $staffJAK->days_pw }}</td>
+			<td>{{ $staffJAK->target_multiplier }}%</td>
+			<td>{{ $staffJAK->commission_value }}%</td>
+		</tr>
+		@endforeach
+	</tbody>
 
 </table>
 
+<h2>PK</h2>
 
+<table class="table">
+	<thead>
+		<tr>
+			<th>Stylist</th>
+			<th>Birth date</th>
+			<th>Salon</th>
+			<th>Position</th>
+			<th>Holiday Entitlement</th>
+			<th>Basic Wage</th>
+			<th>Hours P/D</th>
+			<th>Days P/W</th>
+			<th>Target Multiplier</th>
+			<th>Commission Value</th>
+		</tr>	
+	</thead>
+	<tbody>
+	@foreach($staffMembersPK as $staffPK)
+		<tr>
+			<td>{{ $staffPK->first_name }} {{ $staffPK->last_name }}</td>
+			<td>{{ $staffPK->birth_date }}</td>
+			<td>{{ $staffPK->salon }}</td>
+			<td>{{ $staffPK->position }}</td>
+			<td>{{ $staffPK->holiday_entitlement }}</td>
+			<td>£{{ $staffPK->basic_wage }}</td>
+			<td>{{ $staffPK->hours_pd }}</td>
+			<td>{{ $staffPK->days_pw }}</td>
+			<td>{{ $staffPK->target_multiplier }}%</td>
+			<td>{{ $staffPK->commission_value }}%</td>
+		</tr>
+	@endforeach
+	</tbody>
+</table>
 
 @endsection
