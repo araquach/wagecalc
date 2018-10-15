@@ -6,6 +6,8 @@
 
 <h2>Jakata</h2>
 
+<new-component></new-component>
+
 <table class="table">
 	<thead>
 		<tr>

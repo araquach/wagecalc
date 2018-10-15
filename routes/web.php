@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/staff', 'StaffMemberController@index');
+
+Route::get('/calculate', 'StaffMemberController@calculate');

@@ -33,4 +33,9 @@ class StaffMemberController extends Controller
 		return view('staff_member.show', compact('staffMember'));
 	}
 
+	public function calculate(StaffMember $staffMember)
+	{
+		return view('staff_member.calculate', compact('staffMember'));
+	}
+
 }
