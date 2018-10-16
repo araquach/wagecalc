@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('new-component', require('./components/NewComponent.vue'));
+Vue.component('calculator-component', require('./components/CalculatorComponent.vue'));
 
 const app = new Vue({
     el: '#app'

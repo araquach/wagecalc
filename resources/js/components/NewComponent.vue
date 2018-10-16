@@ -1,6 +1,17 @@
 <template>
-    <h1>{{ staff.name }}</h1>
-    <p>{{ staff.age }}</p>
+     <div>
+        
+        <h1 :class="className">Welcome to this calculator!</h1>
+
+        <h2>{{ reversedMessage }}</h2>
+        <ul>
+            <li v-for="employee in employees" v-text="employee"></li>
+        </ul>
+
+        <input type="text" v-model="newEmployee">
+        <button @click="addName">Add Name</button>
+
+    </div>
 </template>
 
 <script>
@@ -10,16 +21,54 @@
 
     		return {
 
-    			staff: ["name":"Matt", "age":20, "salon":"Jakata"],
+    			message: 'Hello World',
 
-    			mesg: 'Hellooo'
+                newEmployee: '',
+
+                employees: [],
+
+                className: 'red'
 
     		}
 
     	},
+
+        methods: {
+
+            addName() {
+
+                this.employees.push(this.newEmployee);
+
+                this.newEmployee = '';
+
+            }
+
+        },
+
+        computed: {
+
+            reversedMessage() {
+
+                return this.message.split('').reverse().join('');
+
+            }
+
+        },
 
 		mounted() {
             console.log('Component mounted.')
         }
     }
 </script>
+
+<style>
+
+.red {
+    color: red;
+}
+
+.blue {
+    color: blue;
+}
+
+</style>

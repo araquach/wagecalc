@@ -2,6 +2,6 @@
 
 @section('content')
 
-<new-component></new-component>
+<calculator-component></calculator-component>
 
 @endsection
