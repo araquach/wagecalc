@@ -22,6 +22,15 @@ class StaffMemberController extends Controller
 		// return dd($staffMembersPK);
 	}
 
+
+	public function staff()
+	{
+		$staffMembers = StaffMember::all();
+
+		return $staffMembers->toJson();
+	}
+
+
 	/**
 	 * Display the specified resource.
 	 *

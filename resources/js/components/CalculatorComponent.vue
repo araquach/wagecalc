@@ -13,7 +13,7 @@
             </thead>
             <tbody> 
                 <tr v-for="employee in employees">
-                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.first_name }}</td>
                     <td><input type="text" v-model="services"></td>
                     <td><input type="text" v-model="products"></td>
                     <td>{{ calcTotalRev }}</td>
@@ -31,14 +31,7 @@
 
     		return {
 
-    			employees: [
-
-                    { name : 'Matt', wage : 1300, multiplier : 20 },
-                    { name : 'Adam', wage : 800, multiplier : 10 },
-                    { name : 'Laura', wage : 1200, multiplier : 30 }
-
-                ],
-
+    			employees: [],
 
                 products: '',
 
@@ -57,7 +50,7 @@
 
         computed: {
 
-            calcTotalRev() {
+            calcTotalRev(employee) {
 
                 return parseInt(this.products) + parseInt(this.services);
 
@@ -66,7 +59,9 @@
         },
 
 		mounted() {
-            console.log('Component mounted.')
+            
+            axios.get('/staffall').then(response => this.employees = response.data);
+
         }
     }
 </script>
