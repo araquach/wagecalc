@@ -2,6 +2,10 @@
 
 @section('content')
 
-<calculator-component></calculator-component>
+<staff-wage></staff-wage>
+
+<staff-member></staff-member>
+
+
 
 @endsection

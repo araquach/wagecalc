@@ -12,12 +12,7 @@
                 </tr>
             </thead>
             <tbody> 
-                <tr v-for="employee in employees">
-                    <td>{{ employee.first_name }} {{ employee.last_name }}</td>
-                    <td><input type="text" v-model="services"></td>
-                    <td><input type="text" v-model="products"></td>
-                    <td>{{ services + products }}</td>
-                </tr>
+                <p v-for="employee in employees"></p>
             </tbody>
         </table>
 
@@ -35,24 +30,6 @@
 
             }
 
-
-        },
-
-        props:  {
-
-            products: [],
-
-            services: [],
-
-        },
-
-        computed: {
-
-            calcTotalRev(employee) {
-
-                return 10;
-
-            }
 
         },
 
