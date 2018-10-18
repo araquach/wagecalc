@@ -24,3 +24,5 @@ Route::get('/staff', 'StaffMemberController@index');
 Route::get('/calculate', 'StaffMemberController@calculate');
 
 Route::get('/staffall', 'StaffMemberController@staff');
+
+Route::get('/test', 'StaffMemberController@test');

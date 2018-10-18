@@ -15,13 +15,13 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('new-component', require('./components/NewComponent.vue'));
-Vue.component('calculator-component', require('./components/CalculatorComponent.vue'));
-Vue.component('todo', require('./components/TodoComponent.vue'));
-Vue.component('todolist', require('./components/TodolistComponent.vue'));
-Vue.component('staff-member', require('./components/StaffMemberComponent.vue'));
-Vue.component('staff-wage', require('./components/StaffWageComponent.vue'));
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('test-component', require('./components/TestComponent.vue'));
+// Vue.component('calculator-component', require('./components/CalculatorComponent.vue'));
+// Vue.component('todo', require('./components/TodoComponent.vue'));
+// Vue.component('todolist', require('./components/TodolistComponent.vue'));
+// Vue.component('staff-member', require('./components/StaffMemberComponent.vue'));
+// Vue.component('staff-wage', require('./components/StaffWageComponent.vue'));
 
 const app = new Vue({
     el: '#app'
