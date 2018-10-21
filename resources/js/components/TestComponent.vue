@@ -1,10 +1,10 @@
 <template>
      <div>
 
-     <table>
+     <table class="table">
          <tr v-for="item in items">
-             <td>{{ item.name | Upper}}</td>
-             <td>£{{ item.price }}</td>
+             <td>{{ item.name }}</td>
+             <td>£{{ item.price | Increase }}</td>
          </tr>
      </table>
 
@@ -46,6 +46,10 @@
         filters: {
             Upper(value) {
                 return value.toUpperCase();
+            },
+
+            Increase(value) {
+                return value + 200;
             }
         },
 
