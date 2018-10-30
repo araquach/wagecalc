@@ -12,11 +12,11 @@
                 </tr>
             </thead>
             <tbody> 
-                <tr v-for="employee in employees">
+                <tr v-for="(employee, index) in employees">
                     <td>{{ employee.first_name }} {{ employee.last_name }}</td>
                     <td><input type="text" v-model="services"></td>
                     <td><input type="text" v-model="products"></td>
-                    <td>{{ services + products }}</td>
+                    <td>{{ calcTotalRev }}</td>
                 </tr>
             </tbody>
         </table>
@@ -27,7 +27,7 @@
 <script>
     export default {
         
-    	data () {
+    	data() {
 
     		return {
 
@@ -38,17 +38,9 @@
 
         },
 
-        props:  {
-
-            products: [],
-
-            services: [],
-
-        },
-
         computed: {
 
-            calcTotalRev(employee) {
+            calcTotalRev(index) {
 
                 return 10;
 

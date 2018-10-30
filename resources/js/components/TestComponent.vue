@@ -17,13 +17,13 @@
 <script>
     export default {
         
-    	data () {
+    	data() {
 
     		return {
 
     			items: [
 
-                    {'name':'Ball', 'price': 5},
+                    {'name':'Ball', 'price': 10},
                     {'name':'Yoyo', 'price': 10},
                     {'name':'Bat', 'price': 20}
 

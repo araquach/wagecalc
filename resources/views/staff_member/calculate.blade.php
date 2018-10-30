@@ -2,10 +2,6 @@
 
 @section('content')
 
-<staff-wage></staff-wage>
-
-<staff-member></staff-member>
-
-
+<staff-list></staff-list>
 
 @endsection

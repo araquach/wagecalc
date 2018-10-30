@@ -12,7 +12,7 @@
                 </tr>
             </thead>
             <tbody> 
-                <p v-for="employee in employees"></p>
+                <staff-member v-for="(employee, index) in employees"></staff-member>
             </tbody>
         </table>
 
@@ -22,18 +22,18 @@
 <script>
     export default {
         
-    	data () {
+        data () {
 
-    		return {
+            return {
 
-    			employees: [],
+                employees: [],
 
             }
 
 
         },
 
-		mounted() {
+        mounted() {
             
             axios.get('/staffall').then(response => this.employees = response.data);
 
