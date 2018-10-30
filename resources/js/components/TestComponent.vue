@@ -1,10 +1,12 @@
 <template>
      <div>
 
-     <table>
-         <tr v-for="item in items">
-             <td>{{ item.name | Upper}}</td>
+     <table class="table">
+         <tr v-for="(item, i) in items">
+             <td>{{ i + 1 }}</td>
+             <td>{{ item.name }}</td>
              <td>£{{ item.price }}</td>
+             <td>{{ item.colour }}</td>
          </tr>
      </table>
 
@@ -23,9 +25,9 @@
 
     			items: [
 
-                    {'name':'Ball', 'price': 5},
-                    {'name':'Yoyo', 'price': 10},
-                    {'name':'Bat', 'price': 20}
+                    {name:'Frizbee', price: 5, colour:'Red'},
+                    {name:'Yoyo', price: 10, colour:'Green'},
+                    {name:'Bat', price: 20, colour:'Blue'}
 
                 ],
 
