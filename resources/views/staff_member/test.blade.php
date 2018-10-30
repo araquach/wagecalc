@@ -4,6 +4,6 @@
 
 <h1>Test Page</h1>
 
-<test-component></test-component>
+<staff-list></staff-list>
 
 @endsection

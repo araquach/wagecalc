@@ -4,4 +4,6 @@
 
 <staff-list></staff-list>
 
+<staff-member></staff-member>
+
 @endsection
