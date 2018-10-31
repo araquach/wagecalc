@@ -1,11 +1,6 @@
 <template>
 	<tr>
-		<td>{{ person.name }}</td>
-	    <td>{{ person.age }}</td>
-	    <td>{{ person.basic }}</td>
-	    <td>{{ person.commission }}</td>
-	    <td>{{ total }}</td>
-	    <td><input type="text" v-model="services"></td>
+		<td>{{ employee.first_name }} {{ employee.last_name }}</td>
 	</tr>
 </template>
 
@@ -13,20 +8,7 @@
 
     export default {
 
-    	props: ['person'],
-
-    	data() {
-    		return {
-    			services: 0
-    		}
-    		
-    	},
-
-    	computed: {
-    		total() {
-    			return parseInt(this.person.basic) + parseInt(this.services);
-    		}
-    	}
+    	props: ['employee']
 
     }
 </script>
