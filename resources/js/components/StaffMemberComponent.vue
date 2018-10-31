@@ -1,8 +1,6 @@
 <template>
     <div>
-	    <div v-for="person in people">
-	    	<p>{{ person }}</p>
-	    </div>
+	    <p>Name: {{ person.name }}, Age: {{ person.age }}</p>
 	</div>
     
 </template>
@@ -10,14 +8,8 @@
 <script> 
 
     export default {
-        
-    	data() {
-    		return {
-    			people: [
-    				'adam', 'john', 'graham'
-    			]
-    		}
-    	}
+
+    	props: ['person']
 
     }
 </script>
