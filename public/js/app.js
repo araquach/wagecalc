@@ -47380,7 +47380,7 @@ exports = module.exports = __webpack_require__(43)(false);
 
 
 // module
-exports.push([module.i, "\n#main[data-v-7d7ac92a] {\n    width: 400px;\n    height: 300px;\n    padding: 20px;\n    background-color: green;\n}\n\n", ""]);
+exports.push([module.i, "\n#main[data-v-7d7ac92a] {\n    width: 800px;\n    height: 300px;\n    padding: 20px;\n    background-color: grey;\n}\n\n", ""]);
 
 // exports
 
@@ -47743,6 +47743,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47756,13 +47766,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             people: [{
                 name: 'Adam',
-                age: 42
+                age: 42,
+                basic: 1200,
+                commission: 500
             }, {
                 name: 'Terry',
-                age: 53
+                age: 53,
+                basic: 1000,
+                commission: 300
             }, {
                 name: 'Graham',
-                age: 83
+                age: 83,
+                basic: 600,
+                commission: 200
             }]
         };
     }
@@ -47776,20 +47792,43 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { attrs: { id: "main" } },
-    [
-      _c("h1", [_vm._v("Staff List")]),
-      _vm._v(" "),
-      _vm._l(_vm.people, function(person, index) {
-        return _c("staff-member", { attrs: { person: person } })
-      })
-    ],
-    2
-  )
+  return _c("div", { attrs: { id: "main" } }, [
+    _c("h1", [_vm._v("Staff List")]),
+    _vm._v(" "),
+    _c(
+      "table",
+      { staticClass: "table" },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.people, function(person, index) {
+          return _c("staff-member", { attrs: { person: person } })
+        })
+      ],
+      2
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("Name")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Age")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Basic Wage")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Commission")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Total")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Services")])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -47859,11 +47898,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-	props: ['person']
+	props: ['person'],
+
+	data: function data() {
+		return {
+			services: 0
+		};
+	},
+
+
+	computed: {
+		total: function total() {
+			return parseInt(this.person.basic) + parseInt(this.services);
+		}
+	}
 
 });
 
@@ -47875,11 +47931,38 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("p", [
-      _vm._v(
-        "Name: " + _vm._s(_vm.person.name) + ", Age: " + _vm._s(_vm.person.age)
-      )
+  return _c("tr", [
+    _c("td", [_vm._v(_vm._s(_vm.person.name))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.person.age))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.person.basic))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.person.commission))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.total))]),
+    _vm._v(" "),
+    _c("td", [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.services,
+            expression: "services"
+          }
+        ],
+        attrs: { type: "text" },
+        domProps: { value: _vm.services },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.services = $event.target.value
+          }
+        }
+      })
     ])
   ])
 }
