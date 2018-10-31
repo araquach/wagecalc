@@ -18,9 +18,9 @@ window.Vue = require('vue');
 Vue.component('staff-list', require('./components/StaffListComponent.vue'));
 Vue.component('staff-member', require('./components/StaffMemberComponent.vue'));
 
-Vue.component('user', require('./components/User.vue'));
-Vue.component('user-detail', require('./components/UserDetail.vue'));
-Vue.component('user-edit', require('./components/UserEdit.vue'));
+Vue.component('user', require('./components/practice/User.vue'));
+Vue.component('user-detail', require('./components/practice/UserDetail.vue'));
+Vue.component('user-edit', require('./components/practice/UserEdit.vue'));
 
 const app = new Vue({
     el: '#app'

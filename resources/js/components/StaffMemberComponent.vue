@@ -1,12 +1,23 @@
 <template>
-    <p>Staff Member: Adam Carter</p>
+    <div>
+	    <div v-for="person in people">
+	    	<p>{{ person }}</p>
+	    </div>
+	</div>
+    
 </template>
 
 <script> 
 
     export default {
         
-    // props: staffMember;
+    	data() {
+    		return {
+    			people: [
+    				'adam', 'john', 'graham'
+    			]
+    		}
+    	}
 
     }
 </script>

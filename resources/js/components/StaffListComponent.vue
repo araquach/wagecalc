@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div id="main">
         <h1>Staff List</h1>
-        <staff-member v-for="staffMember in staffMembers"></staff-member>
+        <staff-member></staff-member>
     </div>
 </template>
 
@@ -12,10 +12,6 @@
 
         components: {
             'staff-member': StaffMember
-        },
-    
-        data(){
-            staffMembers: ['Adam', 'Matt', 'Jimmy']
         }
 
     }
@@ -25,9 +21,10 @@
 
 <style scoped>
 
-    div {
+    #main {
         width: 400px;
         height: 300px;
+        padding: 20px;
         background-color: green;
     }
 
