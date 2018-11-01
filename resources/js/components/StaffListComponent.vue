@@ -11,6 +11,7 @@
                 <th>Sick Days</th>
                 <th>Tips</th>
                 <th>Wage</th>
+                <th>Notes</th>
             </tr>
             <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'Jakata'"></staff-member>
         </table>
@@ -26,6 +27,7 @@
                 <th>Sick Days</th>
                 <th>Tips</th>
                 <th>Wage</th>
+                <th>Notes</th>
             </tr>
             <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'PK'"></staff-member>
         </table>
