@@ -1,11 +1,33 @@
 <template>
     <div id="main">
-        <h1>Staff List</h1>
+        <h1>Jakata</h1>
         <table class="table">
             <tr>
                 <th>Name</th>
+                <th>Services</th>
+                <th>Products</th>
+                <th>Total Rev</th>
+                <th>Pre Booked Hols</th>
+                <th>Sick Days</th>
+                <th>Tips</th>
+                <th>Wage</th>
             </tr>
-            <staff-member v-for="(employee, index) in employees" :employee="employee"></staff-member>
+            <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'Jakata'"></staff-member>
+        </table>
+
+        <h1>PK</h1>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Services</th>
+                <th>Products</th>
+                <th>Total Rev</th>
+                <th>Pre Booked Hols</th>
+                <th>Sick Days</th>
+                <th>Tips</th>
+                <th>Wage</th>
+            </tr>
+            <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'PK'"></staff-member>
         </table>
     </div>
 </template>
