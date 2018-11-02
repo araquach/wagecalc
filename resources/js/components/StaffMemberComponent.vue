@@ -7,7 +7,7 @@
         <td><input v-model="preBooked"></td>
         <td><input v-model="sick"></td>
         <td><input v-model="tips"></td>
-        <td>{{ wage }}</td>
+        <td><strong>{{ wage }}</strong></td>
         <td><input v-model="notes"></td>
 	</tr>
 </template>
@@ -43,6 +43,16 @@
                 return parseFloat(this.services) + parseFloat(this.products);
             },
 
+            prodCommission() {
+            	return (parseFloat(this.products) * 25) / 100;
+            },
+
+            serviceCommission() {
+            	var remainder = (parseFloat(this.services) - this.employee.basic_wage);
+
+            	return (parseFloat(this.employee.target_multiplier) * remainder) / 100;
+            },
+
             monthlyHours() {
             	var hoursPW = parseInt(this.employee.hours_pd) * parseInt(this.employee.days_pw);
             	var hoursPM = (parseInt(hoursPW) * 52) / 12;
@@ -59,7 +69,7 @@
             },
 
             wage() {
-                var wage = parseFloat(this.total) - this.deductSick + parseFloat(this.tips);
+                var wage = parseFloat(this.total) - this.deductSick + parseFloat(this.tips) + this.prodCommission + this.serviceCommission;
 
                 return wage.toFixed(2);
             },
