@@ -4,6 +4,12 @@
 
 <h2>Update Staff Member</h2>
 
+@if(Session::has('message'))
+    <div class="applicationSuccess">
+    {{{ Session::get('message') }}}
+    </div>
+@endif
+
 <div id="form" >
 	
 	<ul>
@@ -12,7 +18,7 @@
 	    @endforeach
 	</ul>
 	
-	{!! Form::model(array('action' => 'StaffMemberController@update', 'class' => 'form')) !!}
+	{!! Form::model($staff, ['method' => 'PATCH', 'action' => ['StaffMemberController@update', $staff->id]]) !!}
 		
 		@include('staff_member._form')
 		

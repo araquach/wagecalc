@@ -8,7 +8,7 @@ use App\StaffMember;
 class StaffMemberController extends Controller
 {
 
-	public function __construct(StaffMember, $staff)
+	public function __construct(StaffMember $staff)
 	{
 	    $this->staff = $staff;
 
@@ -44,7 +44,7 @@ class StaffMemberController extends Controller
 	
 	public function edit(StaffMember $staff)
 	{
-		return view('staff_member.edit', compact 'staff');
+		return view('staff_member.edit', compact('staff'));
 	}
 
 	public function update(StaffMemberFormRequest $request, StaffMember $staff)

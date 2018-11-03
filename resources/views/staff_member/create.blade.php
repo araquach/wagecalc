@@ -4,6 +4,12 @@
 
 <h2>Create Staff Member</h2>
 
+@if(Session::has('message'))
+    <div class="applicationSuccess">
+    {{{ Session::get('message') }}}
+    </div>
+@endif
+
 <div id="form" >
 	
 	<ul>
