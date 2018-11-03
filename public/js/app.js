@@ -47503,8 +47503,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         total: function total() {
             return parseFloat(this.services) + parseFloat(this.products);
         },
+        prodCommission: function prodCommission() {
+            return parseFloat(this.products) * 25 / 100;
+        },
+        serviceCommission: function serviceCommission() {
+            var remainder = parseFloat(this.services) - this.employee.basic_wage;
+
+            return parseFloat(this.employee.target_multiplier) * remainder / 100;
+        },
+        monthlyHours: function monthlyHours() {
+            var hoursPW = parseInt(this.employee.hours_pd) * parseInt(this.employee.days_pw);
+            var hoursPM = parseInt(hoursPW) * 52 / 12;
+
+            return hoursPM;
+        },
+        hourlyWage: function hourlyWage() {
+            return parseInt(this.employee.basic_wage) / this.monthlyHours;
+        },
+        deductSick: function deductSick() {
+            return parseInt(this.sick) * 8 * this.hourlyWage;
+        },
         wage: function wage() {
-            return parseFloat(this.total) / 2;
+            var wage = parseFloat(this.total) - this.deductSick + parseFloat(this.tips) + this.prodCommission + this.serviceCommission;
+
+            return wage.toFixed(2);
         }
     }
 
@@ -47633,7 +47655,7 @@ var render = function() {
       })
     ]),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.wage))]),
+    _c("td", [_c("strong", [_vm._v(_vm._s(_vm.wage))])]),
     _vm._v(" "),
     _c("td", [
       _c("input", {
