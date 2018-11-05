@@ -4,21 +4,32 @@
 
 <h2>Create Staff Member</h2>
 
-@if(Session::has('message'))
-    <div class="applicationSuccess">
-    {{{ Session::get('message') }}}
-    </div>
-@endif
+
 
 <div id="form" >
 	
-	<ul>
-	    @foreach($errors->all() as $error)
-	        <li>{{{ $error }}}</li>
-	    @endforeach
-	</ul>
-	
-	{!! Form::model(array('action' => 'StaffMemberController@store')) !!}
+	@if(Session::has('message'))
+	    <div>
+	    	{{{ Session::get('message') }}}
+	    </div>
+	@endif
+
+	{!! Form::model(array(
+		'action' => 'StaffMemberController@store'
+	)) !!}
+
+	@if (count($errors) > 0)
+
+		<div class="errorSummary">
+			<p>Please fix the following input errors:</p>
+			<ul>
+		   		 @foreach($errors->all() as $error)
+		        <li>{{{ $error }}}</li>
+		    	@endforeach
+			</ul>
+		</div>
+	   
+	@endif
 		
 		@include('staff_member._form')
 		

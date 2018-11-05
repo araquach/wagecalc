@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/staff', 'StaffMemberController@index');
 Route::get('/staff/create', 'StaffMemberController@create');
-Route::get('/staff/store', 'StaffMemberController@store');
+Route::post('/staff/create', 'StaffMemberController@store');
 Route::get('/staff/{staff}', 'StaffMemberController@edit');
 Route::patch('/staff/{staff}', 'StaffMemberController@update');
 
