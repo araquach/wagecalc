@@ -24,7 +24,7 @@
 			<p>Please fix the following input errors:</p>
 			<ul>
 		   		 @foreach($errors->all() as $error)
-		        <li>{{{ $error }}}</li>
+		        <li class="is-danger">{{{ $error }}}</li>
 		    	@endforeach
 			</ul>
 		</div>
@@ -34,7 +34,7 @@
 		@include('staff_member._form')
 		
 		<div class="row buttons">
-		{!! Form::submit('Create') !!}
+		{!! Form::submit('Create', ['class' => 'button']) !!}
 		</div>
 		
 	{!! Form::close() !!}

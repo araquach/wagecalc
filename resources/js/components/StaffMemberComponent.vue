@@ -1,14 +1,14 @@
 <template>
 	<tr>
 		<td>{{ fullName() }}</td>
-        <td><input v-model="services"></td>
-        <td><input v-model="products"></td>
+        <td><div class="field"><div class="control"><input class="input" type="text" v-model="services"></div></div></td>
+        <td><input class="input is-primary" type="text" v-model="products"></td>
         <td>{{ total }}</td>
-        <td><input v-model="preBooked"></td>
-        <td><input v-model="sick"></td>
-        <td><input v-model="tips"></td>
+        <td><input class="input" type="text" v-model="preBooked"></td>
+        <td><input class="input" type="text" v-model="sick"></td>
+        <td><input class="input" type="text" v-model="tips"></td>
         <td><strong>{{ wage }}</strong></td>
-        <td><input v-model="notes"></td>
+        <td><input class="input" type="text" v-model="notes"></td>
 	</tr>
 </template>
 
