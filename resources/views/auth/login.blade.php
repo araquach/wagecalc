@@ -2,59 +2,60 @@
 
 @section('content')
 
-<h1>Login Form</h1>
+<div class="container">
+    <h1 class="heading">Login Form</h1>
 
-                
-<form method="POST" action="{{ route('login') }}">
-    @csrf
+                    
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
 
-    <div>
-        <label for="email">{{ __('E-Mail Address') }}</label>
+        <div class="field">
+            <label class="label" for="email">{{ __('E-Mail Address') }}</label>
 
-        <div>
-            <input type="email" name="email" value="{{ old('email') }}" required autofocus>
+            <div class="control">
+                <input class="input" type="email" name="email" value="{{ old('email') }}" required autofocus>
 
-            @if ($errors->has('email'))
-                <span>
-                    <strong>{{ $errors->first('email') }}</strong>
-                </span>
-            @endif
+                @if ($errors->has('email'))
+                    <span>
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+            </div>
         </div>
-    </div>
 
-    <div>
-        <label for="password">{{ __('Password') }}</label>
+        <div class="field">
+            <label class="label" for="password">{{ __('Password') }}</label>
 
-        <div>
-            <input type="password" name="password" required>
+            <div class="control">
+                <input class="input" type="password" name="password" required>
 
-            @if ($errors->has('password'))
-                <span>
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-            @endif
+                @if ($errors->has('password'))
+                    <span>
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+            </div>
         </div>
-    </div>
 
-    <div>
-        <div>
-            <input type="checkbox" name="remember">
+        <div class="field">
+            <div class="control">
+                <input class="checkbox" type="checkbox" name="remember">
 
-            <label for="remember">
-                {{ __('Remember Me') }}
-            </label>
+                <label class="label" for="remember">
+                    {{ __('Remember Me') }}
+                </label>
+            </div>
         </div>
-    </div>
 
-    <div>
-        <button type="submit">
-            {{ __('Login') }}
-        </button>
+        <div class="field">
+            <button class="button" type="submit">
+                {{ __('Login') }}
+            </button>
 
-        <a href="{{ route('password.request') }}">
-            {{ __('Forgot Your Password?') }}
-        </a>
-    </div>
-</form>
-
+            <a href="{{ route('password.request') }}">
+                {{ __('Forgot Your Password?') }}
+            </a>
+        </div>
+    </form>
+</div>
 @endsection

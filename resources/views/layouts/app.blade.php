@@ -59,10 +59,10 @@
                     <div class="navbar-end">
                       <div class="navbar-item">
                         <div class="buttons">
+                          @if (Auth::guest())
                             <a class="button is-primary" href="{{ route('register') }}">
                                 <strong>Register</strong>
                             </a>
-                          @if (Auth::guest())
                             <a class="button is-light" href="{{ route('login') }}">Login</a>
                           @else
                             <a class="button is-dark" href="{{ route('logout') }}"
