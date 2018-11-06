@@ -47544,25 +47544,31 @@ var render = function() {
     _c("td", [_vm._v(_vm._s(_vm.fullName()))]),
     _vm._v(" "),
     _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.services,
-            expression: "services"
-          }
-        ],
-        domProps: { value: _vm.services },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+      _c("div", { staticClass: "field" }, [
+        _c("div", { staticClass: "control" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.services,
+                expression: "services"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "text" },
+            domProps: { value: _vm.services },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.services = $event.target.value
+              }
             }
-            _vm.services = $event.target.value
-          }
-        }
-      })
+          })
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("td", [
@@ -47575,6 +47581,8 @@ var render = function() {
             expression: "products"
           }
         ],
+        staticClass: "input is-primary",
+        attrs: { type: "text" },
         domProps: { value: _vm.products },
         on: {
           input: function($event) {
@@ -47599,6 +47607,8 @@ var render = function() {
             expression: "preBooked"
           }
         ],
+        staticClass: "input",
+        attrs: { type: "text" },
         domProps: { value: _vm.preBooked },
         on: {
           input: function($event) {
@@ -47621,6 +47631,8 @@ var render = function() {
             expression: "sick"
           }
         ],
+        staticClass: "input",
+        attrs: { type: "text" },
         domProps: { value: _vm.sick },
         on: {
           input: function($event) {
@@ -47643,6 +47655,8 @@ var render = function() {
             expression: "tips"
           }
         ],
+        staticClass: "input",
+        attrs: { type: "text" },
         domProps: { value: _vm.tips },
         on: {
           input: function($event) {
@@ -47667,6 +47681,8 @@ var render = function() {
             expression: "notes"
           }
         ],
+        staticClass: "input",
+        attrs: { type: "text" },
         domProps: { value: _vm.notes },
         on: {
           input: function($event) {
