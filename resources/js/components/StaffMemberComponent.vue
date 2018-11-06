@@ -2,7 +2,7 @@
 	<tr>
 		<td>{{ fullName() }}</td>
         <td><div class="field"><div class="control"><input class="input" type="text" v-model="services"></div></div></td>
-        <td><input class="input is-primary" type="text" v-model="products"></td>
+        <td><input class="input" type="text" v-model="products"></td>
         <td>{{ total }}</td>
         <td><input class="input" type="text" v-model="preBooked"></td>
         <td><input class="input" type="text" v-model="sick"></td>

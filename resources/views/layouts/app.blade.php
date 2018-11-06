@@ -19,45 +19,72 @@
     </head>
     <body>
         <section id="app" class="section">
-            <div class="container">
-                <div class="container">
-                  <h1 class="title">
-                    Wage Calculator
-                  </h1>
-                  <p class="subtitle">
-                    Let's get calculating!
-                  </p>
-
-                    <a class="button is-large is-warning">
-                      Button
+        
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                      <h1 class="title">Wage Calculator</h1>
                     </a>
 
-                </div>
-                @if (Route::has('login'))
-                    <div>
-                        @auth
-                            <a href="{{ url('/home') }}">Home</a>
-                            <a href="{{ route('logout') }}"
+                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                      <span aria-hidden="true"></span>
+                      <span aria-hidden="true"></span>
+                      <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+
+                  <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start">
+                        <a class="navbar-item" href="{{ url('/home') }}">Home</a>
+
+                      <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                          More
+                        </a>
+                        @if (Route::has('login'))
+                        <div class="navbar-dropdown">
+                                @auth
+                                  <a class="navbar-item" href="{{ url('/staff') }}">Staff</a>
+                                  <a class="navbar-item" href="{{ url('/calculate') }}">Calculate</a>            
+                                    
+                                @else
+                                    <a href="{{ route('login') }}">Login</a>
+                                    <a href="{{ route('register') }}">Register</a>
+                                @endauth
+                            @endif
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="navbar-end">
+                      <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-primary" href="{{ route('register') }}">
+                                <strong>Register</strong>
+                            </a>
+                          @if (Auth::guest())
+                            <a class="button is-light" href="{{ route('login') }}">Login</a>
+                          @else
+                            <a class="button is-dark" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
-
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
-                        @else
-                            <a href="{{ route('login') }}">Login</a>
-                            <a href="{{ route('register') }}">Register</a>
-                        @endauth
+    
+                            @endif
+                        </div>
+                      </div>
                     </div>
-                @endif
-
-                <main>
-                    @yield('content')
-                </main>
-
-            </div>
+                  </div>
+            </nav>
+            
+            <main>
+                @yield('content')
+            </main>
+                    
         </section>
     </body>
 </html>

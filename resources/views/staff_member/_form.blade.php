@@ -12,7 +12,7 @@
 				<div class="control">
 					{!! Form::text('last_name', '', ['class' => 'input']) !!}
 				</div>
-			{!! $errors->first('last_name', '<div class="errorMessage is-danger">:message</div>') !!}
+			{!! $errors->first('last_name', '<div class="errorMessage">:message</div>') !!}
 			</div>
 
 			
