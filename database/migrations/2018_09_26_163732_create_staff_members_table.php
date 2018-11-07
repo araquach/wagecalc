@@ -24,7 +24,7 @@ class CreateStaffMembersTable extends Migration
             $table->decimal('basic_wage', 8, 2);
             $table->integer('hours_pd')->unsigned();
             $table->integer('days_pw')->unsigned();
-            $table->integer('target_multiplier')->unsigned();
+            $table->decimal('target_multiplier', 8, 2);
             $table->integer('commission_value')->unsigned();
             $table->integer('percentage_return')->unsigned();
             $table->timestamps();
