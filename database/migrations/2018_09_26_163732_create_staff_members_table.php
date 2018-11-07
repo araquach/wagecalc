@@ -26,6 +26,7 @@ class CreateStaffMembersTable extends Migration
             $table->integer('days_pw')->unsigned();
             $table->integer('target_multiplier')->unsigned();
             $table->integer('commission_value')->unsigned();
+            $table->integer('percentage_return')->unsigned();
             $table->timestamps();
         });
     }

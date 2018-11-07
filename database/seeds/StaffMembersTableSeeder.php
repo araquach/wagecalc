@@ -25,6 +25,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '5',
             'target_multiplier' => '20',
             'commission_value' => '30',
+            'percentage_return' => '25',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -41,6 +42,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '5',
             'target_multiplier' => '20',
             'commission_value' => '30',
+            'percentage_return' => '15',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -57,6 +59,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '5',
             'target_multiplier' => '10',
             'commission_value' => '15',
+            'percentage_return' => '10',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -73,6 +76,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '5',
             'target_multiplier' => '20',
             'commission_value' => '25',
+            'percentage_return' => '5',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -89,6 +93,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '5',
             'target_multiplier' => '20',
             'commission_value' => '25',
+            'percentage_return' => '20',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -105,6 +110,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '5',
             'target_multiplier' => '0',
             'commission_value' => '0',
+            'percentage_return' => '5',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
 
@@ -121,6 +127,7 @@ class StaffMembersTableSeeder extends Seeder
             'days_pw' => '3',
             'target_multiplier' => '20',
             'commission_value' => '25',
+            'percentage_return' => '10',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }
