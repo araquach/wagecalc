@@ -1,6 +1,6 @@
 <template>
     <div id="main">
-        <h1>Jakata</h1>
+        <h2 class="title">Jakata</h2>
         <table class="table">
             <tr>
                 <th>Name</th>
@@ -16,7 +16,7 @@
             <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'Jakata'"></staff-member>
         </table>
 
-        <h1>PK</h1>
+        <h2 class="title">PK</h2>
         <table class="table">
             <tr>
                 <th>Name</th>

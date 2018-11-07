@@ -47500,33 +47500,60 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     computed: {
-        total: function total() {
-            return parseFloat(this.services) + parseFloat(this.products);
+        totalRev: function totalRev() {
+            return this.services + this.products;
         },
-        prodCommission: function prodCommission() {
-            return parseFloat(this.products) * 25 / 100;
+        dailyWage: function dailyWage() {
+            // hours pd * basic wage
+            return this.employee.hours_pd * this.employee.basic_wage;
         },
-        serviceCommission: function serviceCommission() {
-            var remainder = parseFloat(this.services) - this.employee.basic_wage;
+        basicSalary: function basicSalary() {
+            //  ((daily wage * days pw) *52) / 12
+            return this.dailyWage * this.employee.days_pw * 52 / 12;
+        },
+        wagePcm: function wagePcm() {
 
-            return parseFloat(this.employee.target_multiplier) * remainder / 100;
+            // (((Hours_pd x Days_pw) x 52) /12) x Basic_wage
+            return this.employee.hours_pd * this.employee.days_pw * 52 / 12 * this.employee.basic_wage;
         },
-        monthlyHours: function monthlyHours() {
-            var hoursPW = parseInt(this.employee.hours_pd) * parseInt(this.employee.days_pw);
-            var hoursPM = parseInt(hoursPW) * 52 / 12;
-
-            return hoursPM;
+        daysPcm: function daysPcm() {
+            // how is working days pcm calculated?
         },
-        hourlyWage: function hourlyWage() {
-            return parseInt(this.employee.basic_wage) / this.monthlyHours;
+        commissionTarget: function commissionTarget() {
+            // Wage PCM x Target Multiplier
+            return this.wagePcm * this.employee.target_multiplier;
         },
         deductSick: function deductSick() {
-            return parseInt(this.sick) * 8 * this.hourlyWage;
+            // ((Hours _PD x Basic_Wage) x Sick Days) - Wage PCM
+            return this.employee.hours_pd * this.employee.basic_wage * this.sick - this.wagePcm;
+        },
+
+
+        // PRE BOOKED HOLS VALUE??
+
+        finalTarget: function finalTarget() {
+            // (Commission Target / Number of working Days PCM) x (Number of working days PCM - pre booked Hols)
+
+            return 10;
+        },
+        commissionAchieved: function commissionAchieved() {
+            // ((Services + (Products /2)  = Total Revenue
+
+            // If Total Revenue is Greater than Final Target then 
+            // ((Total Revenue - FINAL_TARGET) / 100) * Percentage_Return = commission achieved
+
+            // If Total Revenue is Less Then show NULL
+
+            var totalRev = (this.services + this.products) / 2;
+
+            if (totalRev > this.finalTarget) {
+                return (this.totalRev - this.finalTarget) / 100 * this.employee.percentage_return;
+            }
+
+            return NULL;
         },
         wage: function wage() {
-            var wage = parseFloat(this.total) - this.deductSick + parseFloat(this.tips) + this.prodCommission + this.serviceCommission;
-
-            return wage.toFixed(2);
+            return "What!";
         }
     }
 
@@ -47550,9 +47577,10 @@ var render = function() {
             directives: [
               {
                 name: "model",
-                rawName: "v-model",
+                rawName: "v-model.number",
                 value: _vm.services,
-                expression: "services"
+                expression: "services",
+                modifiers: { number: true }
               }
             ],
             staticClass: "input",
@@ -47563,7 +47591,10 @@ var render = function() {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.services = $event.target.value
+                _vm.services = _vm._n($event.target.value)
+              },
+              blur: function($event) {
+                _vm.$forceUpdate()
               }
             }
           })
@@ -47576,12 +47607,13 @@ var render = function() {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
+            rawName: "v-model.number",
             value: _vm.products,
-            expression: "products"
+            expression: "products",
+            modifiers: { number: true }
           }
         ],
-        staticClass: "input is-primary",
+        staticClass: "input",
         attrs: { type: "text" },
         domProps: { value: _vm.products },
         on: {
@@ -47589,22 +47621,26 @@ var render = function() {
             if ($event.target.composing) {
               return
             }
-            _vm.products = $event.target.value
+            _vm.products = _vm._n($event.target.value)
+          },
+          blur: function($event) {
+            _vm.$forceUpdate()
           }
         }
       })
     ]),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.total))]),
+    _c("td", [_vm._v(_vm._s(_vm.totalRev))]),
     _vm._v(" "),
     _c("td", [
       _c("input", {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
+            rawName: "v-model.number",
             value: _vm.preBooked,
-            expression: "preBooked"
+            expression: "preBooked",
+            modifiers: { number: true }
           }
         ],
         staticClass: "input",
@@ -47615,7 +47651,10 @@ var render = function() {
             if ($event.target.composing) {
               return
             }
-            _vm.preBooked = $event.target.value
+            _vm.preBooked = _vm._n($event.target.value)
+          },
+          blur: function($event) {
+            _vm.$forceUpdate()
           }
         }
       })
@@ -47626,9 +47665,10 @@ var render = function() {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
+            rawName: "v-model.number",
             value: _vm.sick,
-            expression: "sick"
+            expression: "sick",
+            modifiers: { number: true }
           }
         ],
         staticClass: "input",
@@ -47639,7 +47679,10 @@ var render = function() {
             if ($event.target.composing) {
               return
             }
-            _vm.sick = $event.target.value
+            _vm.sick = _vm._n($event.target.value)
+          },
+          blur: function($event) {
+            _vm.$forceUpdate()
           }
         }
       })
@@ -47650,9 +47693,10 @@ var render = function() {
         directives: [
           {
             name: "model",
-            rawName: "v-model",
+            rawName: "v-model.number",
             value: _vm.tips,
-            expression: "tips"
+            expression: "tips",
+            modifiers: { number: true }
           }
         ],
         staticClass: "input",
@@ -47663,7 +47707,10 @@ var render = function() {
             if ($event.target.composing) {
               return
             }
-            _vm.tips = $event.target.value
+            _vm.tips = _vm._n($event.target.value)
+          },
+          blur: function($event) {
+            _vm.$forceUpdate()
           }
         }
       })
@@ -47715,7 +47762,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "main" } }, [
-    _c("h1", [_vm._v("Jakata")]),
+    _c("h2", { staticClass: "title" }, [_vm._v("Jakata")]),
     _vm._v(" "),
     _c(
       "table",
@@ -47732,7 +47779,7 @@ var render = function() {
       2
     ),
     _vm._v(" "),
-    _c("h1", [_vm._v("PK")]),
+    _c("h2", { staticClass: "title" }, [_vm._v("PK")]),
     _vm._v(" "),
     _c(
       "table",

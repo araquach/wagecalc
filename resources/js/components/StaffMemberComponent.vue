@@ -1,12 +1,12 @@
 <template>
 	<tr>
 		<td>{{ fullName() }}</td>
-        <td><div class="field"><div class="control"><input class="input" type="text" v-model="services"></div></div></td>
-        <td><input class="input" type="text" v-model="products"></td>
-        <td>{{ total }}</td>
-        <td><input class="input" type="text" v-model="preBooked"></td>
-        <td><input class="input" type="text" v-model="sick"></td>
-        <td><input class="input" type="text" v-model="tips"></td>
+        <td><div class="field"><div class="control"><input class="input" type="text" v-model.number="services"></div></div></td>
+        <td><input class="input" type="text" v-model.number="products"></td>
+        <td>{{ totalRev }}</td>
+        <td><input class="input" type="text" v-model.number="preBooked"></td>
+        <td><input class="input" type="text" v-model.number="sick"></td>
+        <td><input class="input" type="text" v-model.number="tips"></td>
         <td><strong>{{ wage }}</strong></td>
         <td><input class="input" type="text" v-model="notes"></td>
 	</tr>
@@ -37,43 +37,72 @@
 
         },
 
-        computed: {
+        computed: {       
 
-            total() {
-                return parseFloat(this.services) + parseFloat(this.products);
+            totalRev() {
+                return this.services + this.products;
             },
 
-            prodCommission() {
-            	return (parseFloat(this.products) * 25) / 100;
+            dailyWage() {
+                // hours pd * basic wage
+                return this.employee.hours_pd * this.employee.basic_wage;
             },
 
-            serviceCommission() {
-            	var remainder = (parseFloat(this.services) - this.employee.basic_wage);
-
-            	return (parseFloat(this.employee.target_multiplier) * remainder) / 100;
+            basicSalary() {
+                //  ((daily wage * days pw) *52) / 12
+                return ((this.dailyWage * this.employee.days_pw) * 52) / 12;
             },
 
-            monthlyHours() {
-            	var hoursPW = parseInt(this.employee.hours_pd) * parseInt(this.employee.days_pw);
-            	var hoursPM = (parseInt(hoursPW) * 52) / 12;
+            wagePcm() {
 
-            	return hoursPM;
+                // (((Hours_pd x Days_pw) x 52) /12) x Basic_wage
+                return (((this.employee.hours_pd * this.employee.days_pw) * 52) / 12) * this.employee.basic_wage;
             },
 
-            hourlyWage() {
-            	return parseInt(this.employee.basic_wage) / this.monthlyHours;
+            daysPcm() {
+                // how is working days pcm calculated?
+            },
+
+            commissionTarget() {
+                // Wage PCM x Target Multiplier
+                return this.wagePcm * this.employee.target_multiplier;
             },
 
             deductSick() {
-            	return (parseInt(this.sick) * 8) * this.hourlyWage;
+                // ((Hours _PD x Basic_Wage) x Sick Days) - Wage PCM
+                return ((this.employee.hours_pd * this.employee.basic_wage) * this.sick) - this.wagePcm;
+            },
+
+            // PRE BOOKED HOLS VALUE??
+
+            finalTarget() {
+                // (Commission Target / Number of working Days PCM) x (Number of working days PCM - pre booked Hols)
+
+                return 10;
+                
+            },
+
+            commissionAchieved() {
+                // ((Services + (Products /2)  = Total Revenue
+
+                // If Total Revenue is Greater than Final Target then 
+                // ((Total Revenue - FINAL_TARGET) / 100) * Percentage_Return = commission achieved
+
+                // If Total Revenue is Less Then show NULL
+
+                var totalRev = (this.services + this.products) / 2;
+
+                if (totalRev > this.finalTarget) {
+                   return ((this.totalRev - this.finalTarget) / 100) * this.employee.percentage_return;
+                }
+
+                return NULL; 
             },
 
             wage() {
-                var wage = parseFloat(this.total) - this.deductSick + parseFloat(this.tips) + this.prodCommission + this.serviceCommission;
-
-                return wage.toFixed(2);
-            },
-
+                return "What!";
+            }
+        
         }
 
     }
