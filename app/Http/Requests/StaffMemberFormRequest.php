@@ -34,7 +34,8 @@ class StaffMemberFormRequest extends FormRequest
             'hours_pd' => 'required',
             'days_pw' => 'required',
             'target_multiplier' => 'required',
-            'commission_value' => 'required'
+            'commission_value' => 'required',
+            'percentage_return' => 'required'
         ];
     }
 }
