@@ -47512,12 +47512,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.dailyWage * this.employee.days_pw * 52 / 12;
         },
         wagePcm: function wagePcm() {
-
             // (((Hours_pd x Days_pw) x 52) /12) x Basic_wage
             return this.employee.hours_pd * this.employee.days_pw * 52 / 12 * this.employee.basic_wage;
         },
         daysPcm: function daysPcm() {
-            // how is working days pcm calculated?
+            return this.employee.days_pw * 52 / 12;
         },
         commissionTarget: function commissionTarget() {
             // Wage PCM x Target Multiplier
@@ -47530,11 +47529,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
         // PRE BOOKED HOLS VALUE??
+        // commission value per day (target multiplier)
+        // wage pcm * target multiplier = commission target
+        // (commissiotarget / working days pm = single day commission) * /working days per month - prebooked hols)
 
-        finalTarget: function finalTarget() {
+        finalCommissionTarget: function finalCommissionTarget() {
             // (Commission Target / Number of working Days PCM) x (Number of working days PCM - pre booked Hols)
 
-            return 10;
+            return this.commissionTarget / this.daysPcm * (this.daysPcm - this.preBooked);
         },
         commissionAchieved: function commissionAchieved() {
             // ((Services + (Products /2)  = Total Revenue
@@ -47546,14 +47548,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var totalRev = (this.services + this.products) / 2;
 
-            if (totalRev > this.finalTarget) {
-                return (this.totalRev - this.finalTarget) / 100 * this.employee.percentage_return;
-            }
-
-            return NULL;
+            return (totalRev - this.finalCommissionTarget) / 100 * this.employee.percentage_return;
         },
         wage: function wage() {
-            return "What!";
+            return this.wagePcm + this.commissionAchieved;
         }
     }
 

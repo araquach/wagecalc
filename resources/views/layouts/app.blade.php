@@ -45,7 +45,8 @@
                         <div class="navbar-dropdown">
                                 @auth
                                   <a class="navbar-item" href="{{ url('/staff') }}">Staff</a>
-                                  <a class="navbar-item" href="{{ url('/calculate') }}">Calculate</a>            
+                                  <a class="navbar-item" href="{{ url('/calculate') }}">Calculate</a>
+                                  <a class="navbar-item" href="{{ url('/staff/create') }}">Add Staff Member</a>          
                                     
                                 @else
                                     <a href="{{ route('login') }}">Login</a>
