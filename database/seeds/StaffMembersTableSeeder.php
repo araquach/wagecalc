@@ -20,10 +20,10 @@ class StaffMembersTableSeeder extends Seeder
             'salon' => 'Jakata',
             'position' => 'Stylist',
             'holiday_entitlement' => '28',
-            'basic_wage' => '5.00',
+            'basic_wage' => '5.77',
             'hours_pd' => '8',
             'days_pw' => '5',
-            'target_multiplier' => '2.5',
+            'target_multiplier' => '3.5',
             'commission_value' => '15',
             'percentage_return' => '25',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')

@@ -44,17 +44,14 @@
             },
 
             dailyWage() {
-                // hours pd * basic wage
                 return this.employee.hours_pd * this.employee.basic_wage;
             },
 
             basicSalary() {
-                //  ((daily wage * days pw) *52) / 12
                 return ((this.dailyWage * this.employee.days_pw) * 52) / 12;
             },
 
             wagePcm() {
-                // (((Hours_pd x Days_pw) x 52) /12) x Basic_wage
                 return (((this.employee.hours_pd * this.employee.days_pw) * 52) / 12) * this.employee.basic_wage;
             },
 
@@ -63,36 +60,22 @@
             },
 
             commissionTarget() {
-                // Wage PCM x Target Multiplier
                 return this.wagePcm * this.employee.target_multiplier;
             },
 
-            deductSick() {
-                // ((Hours _PD x Basic_Wage) x Sick Days) - Wage PCM
-                return ((this.employee.hours_pd * this.employee.basic_wage) * this.sick) - this.wagePcm;
+            totalSickValue() {
+                return ((this.employee.hours_pd * this.employee.basic_wage) * this.sick);
             },
 
-            // PRE BOOKED HOLS VALUE??
-            // commission value per day (target multiplier)
-            // wage pcm * target multiplier = commission target
-            // (commissiotarget / working days pm = single day commission) * /working days per month - prebooked hols)
-
             finalCommissionTarget() {
-                // (Commission Target / Number of working Days PCM) x (Number of working days PCM - pre booked Hols)
-
                 return (this.commissionTarget / this.daysPcm) * (this.daysPcm - this.preBooked);
                 
             },
 
             commissionAchieved() {
-                // ((Services + (Products /2)  = Total Revenue
+                
 
-                // If Total Revenue is Greater than Final Target then 
-                // ((Total Revenue - FINAL_TARGET) / 100) * Percentage_Return = commission achieved
-
-                // If Total Revenue is Less Then show NULL
-
-                var totalRev = (this.services + this.products) / 2;
+                var totalRev = this.services + (this.products / 2);
 
                 return ((totalRev - this.finalCommissionTarget) / 100) * this.employee.percentage_return;
             },
