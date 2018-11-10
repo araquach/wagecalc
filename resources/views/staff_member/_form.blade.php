@@ -84,14 +84,6 @@
 			</div>
 
 			<div class="field">
-			{!! Form::label('commission_value', 'Commission Value', ['class' => 'label']) !!}
-			<div class="control">
-				{!! Form::text('commission_value', '', ['class' => 'input']) !!}
-			</div>
-			{!! $errors->first('commission_value', '<div class="errorMessage">:message</div>') !!}
-			</div>
-
-			<div class="field">
 			{!! Form::label('percentage_return', 'Percentage Return', ['class' => 'label']) !!}
 			<div class="control">
 				{!! Form::text('percentage_return', '', ['class' => 'input']) !!}
