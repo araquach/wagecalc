@@ -24,7 +24,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '5',
             'target_multiplier' => '3.5',
-            'commission_value' => '15',
             'percentage_return' => '25',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -41,7 +40,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '5',
             'target_multiplier' => '1.5',
-            'commission_value' => '5',
             'percentage_return' => '15',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -58,7 +56,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '5',
             'target_multiplier' => '3',
-            'commission_value' => '20',
             'percentage_return' => '10',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -75,7 +72,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '5',
             'target_multiplier' => '3.5',
-            'commission_value' => '25',
             'percentage_return' => '5',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -92,7 +88,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '5',
             'target_multiplier' => '1.5',
-            'commission_value' => '5',
             'percentage_return' => '20',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -109,7 +104,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '5',
             'target_multiplier' => '3',
-            'commission_value' => '20',
             'percentage_return' => '5',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -126,7 +120,6 @@ class StaffMembersTableSeeder extends Seeder
             'hours_pd' => '8',
             'days_pw' => '3',
             'target_multiplier' => '2',
-            'commission_value' => '10',
             'percentage_return' => '10',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);

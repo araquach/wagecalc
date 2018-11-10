@@ -72,16 +72,25 @@
                 
             },
 
-            commissionAchieved() {
-                
-
-                var totalRev = this.services + (this.products / 2);
-
-                return ((totalRev - this.finalCommissionTarget) / 100) * this.employee.percentage_return;
+            calculatedRev() {
+                return this.services + (this.products / 2);
             },
 
+            commissionAchieved() {
+                return ((this.calculatedRev - this.finalCommissionTarget) / 100) * this.employee.percentage_return;
+            },
+
+            // If Total Revenue is Greater than Final Target then      
+            // ((Total Revenue - FINAL_TARGET) / 100) * Percentage_Return = commission achieved
+
             wage() {
-                return this.wagePcm + this.commissionAchieved;
+                if(this.calculatedRev > this.finalCommissionTarget) {
+                    var wage = this.wagePcm + this.commissionAchieved;
+
+                    return wage.toFixed(2); 
+                }
+
+                return this.basicSalary.toFixed(2);
             }
         
         }
