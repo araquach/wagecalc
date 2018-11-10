@@ -85,12 +85,14 @@
 
             wage() {
                 if(this.calculatedRev > this.finalCommissionTarget) {
-                    var wage = this.wagePcm + this.commissionAchieved;
+                    var wage = this.wagePcm + this.commissionAchieved - this.totalSickValue + this.tips;
 
                     return wage.toFixed(2); 
                 }
 
-                return this.basicSalary.toFixed(2);
+                 var wage = this.basicSalary.toFixed(2) - this.totalSickValue + this.tips;
+                 
+                 return wage.toFixed(2);
             }
         
         }
