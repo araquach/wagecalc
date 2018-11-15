@@ -38,7 +38,17 @@
 			<div class="field">
 				{!! Form::label('position', 'Position', ['class' => 'label']) !!}
 				<div class="control">
-					{!! Form::text('position', '', ['class' => 'input']) !!}
+					{!! Form::select('position', array(
+						'Junior' => 'Junior',
+						'Junior Stylist' => 'Junior Stylist',
+						'Graduate Stylist' => 'Graduate Stylist',
+						'Stylist' => 'Stylist',
+						'Stylist Adv' => 'Stylist Adv',
+						'Senior Stylist' => 'Senior Stylist',
+						'Senior Stylist Adv' => 'Senion Stylist Adv',
+						'Director' => 'Director'
+
+						), ['placeholder' => 'Select Level']) !!}
 				</div>
 				{!! $errors->first('position', '<div class="errorMessage">:message</div>') !!}
 			</div>
@@ -76,19 +86,15 @@
 			</div>
 
 			<div class="field">
-			{!! Form::label('target_multiplier', 'Target Multiplier', ['class' => 'label']) !!}
-			<div class="control">
-				{!! Form::text('target_multiplier', '', ['class' => 'input']) !!}
-			</div>
-			{!! $errors->first('target_multiplier', '<div class="errorMessage">:message</div>') !!}
-			</div>
-
-			<div class="field">
 			{!! Form::label('percentage_return', 'Percentage Return', ['class' => 'label']) !!}
 			<div class="control">
 				{!! Form::text('percentage_return', '', ['class' => 'input']) !!}
 			</div>
 			{!! $errors->first('percentage_return', '<div class="errorMessage">:message</div>') !!}
 			</div>
+
+			{!! Form::hidden('active', 1) !!}
+
+
 
 
