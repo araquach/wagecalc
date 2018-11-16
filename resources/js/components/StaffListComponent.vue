@@ -1,5 +1,5 @@
 <template>
-    <div id="main">
+    <div id="main" class="container">
         <h2 class="title">Jakata</h2>
         <table class="table is-striped">
             <tr>
@@ -31,6 +31,7 @@
             </tr>
             <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'PK'"></staff-member>
         </table>
+
     </div>
 </template>
 

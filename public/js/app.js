@@ -47432,6 +47432,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -47778,7 +47779,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "main" } }, [
+  return _c("div", { staticClass: "container", attrs: { id: "main" } }, [
     _c("h2", { staticClass: "title" }, [_vm._v("Jakata")]),
     _vm._v(" "),
     _c(
