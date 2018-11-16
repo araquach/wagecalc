@@ -1,7 +1,7 @@
 <template>
     <div id="main">
         <h2 class="title">Jakata</h2>
-        <table class="table">
+        <table class="table is-striped">
             <tr>
                 <th>Name</th>
                 <th>Services</th>
@@ -17,7 +17,7 @@
         </table>
 
         <h2 class="title">PK</h2>
-        <table class="table">
+        <table class="table is-narrow">
             <tr>
                 <th>Name</th>
                 <th>Services</th>

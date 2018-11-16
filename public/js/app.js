@@ -47757,7 +47757,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "table",
-      { staticClass: "table" },
+      { staticClass: "table is-striped" },
       [
         _vm._m(0),
         _vm._v(" "),
@@ -47774,7 +47774,7 @@ var render = function() {
     _vm._v(" "),
     _c(
       "table",
-      { staticClass: "table" },
+      { staticClass: "table is-narrow" },
       [
         _vm._m(1),
         _vm._v(" "),
