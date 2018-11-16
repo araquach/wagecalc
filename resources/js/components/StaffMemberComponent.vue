@@ -39,6 +39,33 @@
 
         computed: {       
 
+            targetMultiplier() {
+                switch (this.employee.percentage_return) {
+                    case 5:
+                    return 1.5;
+
+                    break;
+
+                    case 10:
+                    return 2;
+
+                    break;
+
+                    case 15:
+                    return 2.5;
+
+                    break;
+
+                    case 20:
+                    return 3;
+
+                    break;
+
+                    case 25:
+                    return 3.5;
+                }
+            },
+
             totalRev() {
                 return this.services + this.products;
             },
@@ -60,7 +87,7 @@
             },
 
             commissionTarget() {
-                return this.wagePcm * this.employee.target_multiplier;
+                return this.wagePcm * this.targetMultiplier;
             },
 
             totalSickValue() {

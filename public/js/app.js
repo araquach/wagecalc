@@ -47500,6 +47500,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     computed: {
+        targetMultiplier: function targetMultiplier() {
+            switch (this.employee.percentage_return) {
+                case 5:
+                    return 1.5;
+
+                    break;
+
+                case 10:
+                    return 2;
+
+                    break;
+
+                case 15:
+                    return 2.5;
+
+                    break;
+
+                case 20:
+                    return 3;
+
+                    break;
+
+                case 25:
+                    return 3.5;
+            }
+        },
         totalRev: function totalRev() {
             return this.services + this.products;
         },
@@ -47516,7 +47542,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.employee.days_pw * 52 / 12;
         },
         commissionTarget: function commissionTarget() {
-            return this.wagePcm * this.employee.target_multiplier;
+            return this.wagePcm * this.targetMultiplier;
         },
         totalSickValue: function totalSickValue() {
             return this.employee.hours_pd * this.employee.basic_wage * this.sick;

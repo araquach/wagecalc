@@ -25,15 +25,9 @@
                     <a class="navbar-item" href="#">
                       <h1 class="title">Wage Calculator</h1>
                     </a>
+                </div>
 
-                    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                      <span aria-hidden="true"></span>
-                      <span aria-hidden="true"></span>
-                      <span aria-hidden="true"></span>
-                    </a>
-                  </div>
-
-                  <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-menu">
                     <div class="navbar-start">
                         <a class="navbar-item" href="{{ url('/home') }}">Home</a>
 

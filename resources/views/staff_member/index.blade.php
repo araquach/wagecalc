@@ -17,7 +17,6 @@
 			<th>Basic Wage</th>
 			<th>Hours P/D</th>
 			<th>Days P/W</th>
-			<th>Target Multiplier</th>
 			<th>Commission Value</th>
 		</tr>
 	</thead>
@@ -32,7 +31,6 @@
 			<td>£{{ $staffJAK->basic_wage }}</td>
 			<td>{{ $staffJAK->hours_pd }}</td>
 			<td>{{ $staffJAK->days_pw }}</td>
-			<td>{{ $staffJAK->target_multiplier }}</td>
 			<td>{{ $staffJAK->percentage_return }}%</td>
 		</tr>
 		@endforeach
@@ -68,8 +66,7 @@
 			<td>£{{ $staffPK->basic_wage }}</td>
 			<td>{{ $staffPK->hours_pd }}</td>
 			<td>{{ $staffPK->days_pw }}</td>
-			<td>{{ $staffPK->target_multiplier }}%</td>
-			<td>{{ $staffPK->commission_value }}%</td>
+			<td>{{ $staffPK->percentage_return }}%</td>
 		</tr>
 	@endforeach
 	</tbody>

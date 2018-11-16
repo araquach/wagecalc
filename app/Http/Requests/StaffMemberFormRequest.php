@@ -33,8 +33,8 @@ class StaffMemberFormRequest extends FormRequest
             'basic_wage' => 'required',
             'hours_pd' => 'required',
             'days_pw' => 'required',
-            'target_multiplier' => 'required',
-            'percentage_return' => 'required'
+            'percentage_return' => 'required',
+            'active' => 'required'
         ];
     }
 }
