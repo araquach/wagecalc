@@ -4,11 +4,19 @@
         <td><div class="field"><div class="control"><input class="input" type="text" v-model.number="services"></div></div></td>
         <td><input class="input" type="text" v-model.number="products"></td>
         <td>{{ totalRev }}</td>
+        <td><input class="input" type="text" v-model.number="extra"></td>
         <td><input class="input" type="text" v-model.number="preBooked"></td>
         <td><input class="input" type="text" v-model.number="sick"></td>
         <td><input class="input" type="text" v-model.number="tips"></td>
         <td><strong>{{ wage }}</strong></td>
         <td><input class="input" type="text" v-model="notes"></td>
+        <td>{{ basicSalary }}</td>
+        <td>{{ extra }}</td>
+        <td>{{ tips }}</td>
+        <td>{{ sick }}</td>
+        <td>{{ commissionAchieved }}</td>
+        <td>{{ wage }}</td>
+        <td>{{ notes }}</td>
 	</tr>
 </template>
 
@@ -23,6 +31,7 @@
                 services: 0,
                 products: 0,
                 sick: 0,
+                extra: 0,
                 preBooked: 0,
                 tips: 0,
                 notes: ''

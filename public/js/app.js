@@ -47433,6 +47433,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47476,6 +47484,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47487,6 +47503,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             services: 0,
             products: 0,
             sick: 0,
+            extra: 0,
             preBooked: 0,
             tips: 0,
             notes: ''
@@ -47656,6 +47673,34 @@ var render = function() {
           {
             name: "model",
             rawName: "v-model.number",
+            value: _vm.extra,
+            expression: "extra",
+            modifiers: { number: true }
+          }
+        ],
+        staticClass: "input",
+        attrs: { type: "text" },
+        domProps: { value: _vm.extra },
+        on: {
+          input: function($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.extra = _vm._n($event.target.value)
+          },
+          blur: function($event) {
+            _vm.$forceUpdate()
+          }
+        }
+      })
+    ]),
+    _vm._v(" "),
+    _c("td", [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model.number",
             value: _vm.preBooked,
             expression: "preBooked",
             modifiers: { number: true }
@@ -47758,7 +47803,21 @@ var render = function() {
           }
         }
       })
-    ])
+    ]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.basicSalary))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.extra))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.tips))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.sick))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.commissionAchieved))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.wage))]),
+    _vm._v(" "),
+    _c("td", [_vm._v(_vm._s(_vm.notes))])
   ])
 }
 var staticRenderFns = []
@@ -47829,6 +47888,8 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Total Rev")]),
       _vm._v(" "),
+      _c("th", [_vm._v("Extras")]),
+      _vm._v(" "),
       _c("th", [_vm._v("Pre Booked Hols")]),
       _vm._v(" "),
       _c("th", [_vm._v("Sick Days")]),
@@ -47837,7 +47898,21 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Wage")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Notes")])
+      _c("th", [_vm._v("Notes")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Basic")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Extras")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Tips")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Sick")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Commission")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Total")]),
+      _vm._v(" "),
+      _c("th", { staticClass: "hidden" }, [_vm._v("Notes")])
     ])
   },
   function() {

@@ -7,11 +7,19 @@
                 <th>Services</th>
                 <th>Products</th>
                 <th>Total Rev</th>
+                <th>Extras</th>
                 <th>Pre Booked Hols</th>
                 <th>Sick Days</th>
                 <th>Tips</th>
                 <th>Wage</th>
                 <th>Notes</th>
+                <th class="hidden">Basic</th>
+                <th class="hidden">Extras</th>
+                <th class="hidden">Tips</th>
+                <th class="hidden">Sick</th>
+                <th class="hidden">Commission</th>
+                <th class="hidden">Total</th>
+                <th class="hidden">Notes</th>
             </tr>
             <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'Jakata'"></staff-member>
         </table>
