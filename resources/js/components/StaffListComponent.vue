@@ -4,41 +4,53 @@
         <table class="table is-striped">
             <tr>
                 <th>Name</th>
-                <th>Services</th>
-                <th>Products</th>
-                <th>Total Rev</th>
-                <th>Extras</th>
-                <th>Pre Booked Hols</th>
-                <th>Sick Days</th>
-                <th>Tips</th>
-                <th>Wage</th>
-                <th>Notes</th>
-                <th class="hidden">Basic</th>
-                <th class="hidden">Extras</th>
-                <th class="hidden">Tips</th>
-                <th class="hidden">Sick</th>
-                <th class="hidden">Commission</th>
-                <th class="hidden">Total</th>
-                <th class="hidden">Notes</th>
+                <th v-if="!show">Services</th>
+                <th v-if="!show">Products</th>
+                <th v-if="!show">Total Rev</th>
+                <th v-if="!show">Extras</th>
+                <th v-if="!show">Pre Booked Hols</th>
+                <th v-if="!show">Sick Days</th>
+                <th v-if="!show">Tips</th>
+                <th v-if="!show">Wage</th>
+                <th v-if="!show">Notes</th>
+    
+                <th v-if="show">Basic</th>
+                <th v-if="show">Extras</th>
+                <th v-if="show">Tips</th>
+                <th v-if="show">Sick</th>
+                <th v-if="show">Commission</th>
+                <th v-if="show">Total</th>
+                <th v-if="show">Notes</th>
             </tr>
-            <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'Jakata'"></staff-member>
+            <staff-member v-for="(employee, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'Jakata'"></staff-member>
         </table>
 
         <h2 class="title">PK</h2>
         <table class="table is-narrow">
             <tr>
                 <th>Name</th>
-                <th>Services</th>
-                <th>Products</th>
-                <th>Total Rev</th>
-                <th>Pre Booked Hols</th>
-                <th>Sick Days</th>
-                <th>Tips</th>
-                <th>Wage</th>
-                <th>Notes</th>
+                <th v-if="!show">Services</th>
+                <th v-if="!show">Products</th>
+                <th v-if="!show">Total Rev</th>
+                <th v-if="!show">Extras</th>
+                <th v-if="!show">Pre Booked Hols</th>
+                <th v-if="!show">Sick Days</th>
+                <th v-if="!show">Tips</th>
+                <th v-if="!show">Wage</th>
+                <th v-if="!show">Notes</th>
+    
+                <th v-if="show">Basic</th>
+                <th v-if="show">Extras</th>
+                <th v-if="show">Tips</th>
+                <th v-if="show">Sick</th>
+                <th v-if="show">Commission</th>
+                <th v-if="show">Total</th>
+                <th v-if="show">Notes</th>
             </tr>
-            <staff-member v-for="(employee, index) in employees" :employee="employee" v-if="employee.salon == 'PK'"></staff-member>
+            <staff-member v-for="(employee, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'PK'"></staff-member>
         </table>
+
+        <button class="button" @click="toggleView">Toggle View</button>
 
     </div>
 </template>
@@ -52,9 +64,20 @@
             'staff-member': StaffMember
         },
 
+        methods: {
+            toggleView() {
+                if(this.show == 'false') {
+                    this.show = 'true';
+                }
+
+                this.show = 'false';
+            }
+        },
+
         data() {
             return {
-                employees: []
+                employees: [],
+                show: false
             }
         },
 

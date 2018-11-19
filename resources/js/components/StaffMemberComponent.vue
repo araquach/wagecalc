@@ -1,22 +1,23 @@
 <template>
 	<tr>
 		<td>{{ fullName() }}</td>
-        <td><div class="field"><div class="control"><input class="input" type="text" v-model.number="services"></div></div></td>
-        <td><input class="input" type="text" v-model.number="products"></td>
-        <td>{{ totalRev }}</td>
-        <td><input class="input" type="text" v-model.number="extra"></td>
-        <td><input class="input" type="text" v-model.number="preBooked"></td>
-        <td><input class="input" type="text" v-model.number="sick"></td>
-        <td><input class="input" type="text" v-model.number="tips"></td>
-        <td><strong>{{ wage }}</strong></td>
-        <td><input class="input" type="text" v-model="notes"></td>
-        <td>{{ basicSalary }}</td>
-        <td>{{ extra }}</td>
-        <td>{{ tips }}</td>
-        <td>{{ sick }}</td>
-        <td>{{ commissionAchieved }}</td>
-        <td>{{ wage }}</td>
-        <td>{{ notes }}</td>
+        <td v-if="!show"><div class="field"><div class="control"><input class="input" type="text" v-model.number="services"></div></div></td>
+        <td v-if="!show"><input class="input" type="text" v-model.number="products"></td>
+        <td v-if="!show">{{ totalRev }}</td>
+        <td v-if="!show"><input class="input" type="text" v-model.number="extra"></td>
+        <td v-if="!show"><input class="input" type="text" v-model.number="preBooked"></td>
+        <td v-if="!show"><input class="input" type="text" v-model.number="sick"></td>
+        <td v-if="!show"><input class="input" type="text" v-model.number="tips"></td>
+        <td v-if="!show"><strong>{{ wage }}</strong></td>
+        <td v-if="!show"><input class="input" type="text" v-model="notes"></td>
+        
+        <td v-if="show">{{ basicSalary.toFixed(2) }}</td>
+        <td v-if="show">{{ extra }}</td>
+        <td v-if="show">{{ tips }}</td>
+        <td v-if="show">{{ totalSickValue }}</td>
+        <td v-if="show">{{ commissionAchieved.toFixed(2) }}</td>
+        <td v-if="show">{{ wage }}</td>
+        <td v-if="show">{{ notes }}</td>
 	</tr>
 </template>
 
@@ -24,7 +25,7 @@
 
     export default {
 
-    	props: ['employee'],
+    	props: ['employee','show'],
 
         data() {
             return {
@@ -113,7 +114,13 @@
             },
 
             commissionAchieved() {
-                return ((this.calculatedRev - this.finalCommissionTarget) / 100) * this.employee.percentage_return;
+                var commission = ((this.calculatedRev - this.finalCommissionTarget) / 100) * this.employee.percentage_return;
+
+                if(commission > 0 ) {
+                    return ((this.calculatedRev - this.finalCommissionTarget) / 100) * this.employee.percentage_return;
+                }
+                
+                return 0;
             },
 
             // If Total Revenue is Greater than Final Target then      
@@ -121,12 +128,12 @@
 
             wage() {
                 if(this.calculatedRev > this.finalCommissionTarget) {
-                    var wage = this.wagePcm + this.commissionAchieved - this.totalSickValue + this.tips;
+                    var wage = this.wagePcm + this.commissionAchieved - this.totalSickValue + this.tips + this.extra;
 
                     return wage.toFixed(2); 
                 }
 
-                 var wage = this.basicSalary.toFixed(2) - this.totalSickValue + this.tips;
+                 var wage = this.basicSalary - this.totalSickValue + this.tips + this.extra;
                  
                  return wage.toFixed(2);
             }

@@ -47441,6 +47441,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -47450,9 +47462,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         'staff-member': __WEBPACK_IMPORTED_MODULE_0__StaffMemberComponent_vue___default.a
     },
 
+    methods: {
+        toggleView: function toggleView() {
+            if (this.show == 'false') {
+                this.show = 'true';
+            }
+
+            this.show = 'false';
+        }
+    },
+
     data: function data() {
         return {
-            employees: []
+            employees: [],
+            show: false
         };
     },
     mounted: function mounted() {
@@ -47492,11 +47515,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 
-    props: ['employee'],
+    props: ['employee', 'show'],
 
     data: function data() {
         return {
@@ -47572,7 +47596,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.services + this.products / 2;
         },
         commissionAchieved: function commissionAchieved() {
-            return (this.calculatedRev - this.finalCommissionTarget) / 100 * this.employee.percentage_return;
+            var commission = (this.calculatedRev - this.finalCommissionTarget) / 100 * this.employee.percentage_return;
+
+            if (commission > 0) {
+                return (this.calculatedRev - this.finalCommissionTarget) / 100 * this.employee.percentage_return;
+            }
+
+            return 0;
         },
 
 
@@ -47581,12 +47611,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         wage: function wage() {
             if (this.calculatedRev > this.finalCommissionTarget) {
-                var wage = this.wagePcm + this.commissionAchieved - this.totalSickValue + this.tips;
+                var wage = this.wagePcm + this.commissionAchieved - this.totalSickValue + this.tips + this.extra;
 
                 return wage.toFixed(2);
             }
 
-            var wage = this.basicSalary.toFixed(2) - this.totalSickValue + this.tips;
+            var wage = this.basicSalary - this.totalSickValue + this.tips + this.extra;
 
             return wage.toFixed(2);
         }
@@ -47605,28 +47635,61 @@ var render = function() {
   return _c("tr", [
     _c("td", [_vm._v(_vm._s(_vm.fullName()))]),
     _vm._v(" "),
-    _c("td", [
-      _c("div", { staticClass: "field" }, [
-        _c("div", { staticClass: "control" }, [
+    !_vm.show
+      ? _c("td", [
+          _c("div", { staticClass: "field" }, [
+            _c("div", { staticClass: "control" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model.number",
+                    value: _vm.services,
+                    expression: "services",
+                    modifiers: { number: true }
+                  }
+                ],
+                staticClass: "input",
+                attrs: { type: "text" },
+                domProps: { value: _vm.services },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.services = _vm._n($event.target.value)
+                  },
+                  blur: function($event) {
+                    _vm.$forceUpdate()
+                  }
+                }
+              })
+            ])
+          ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    !_vm.show
+      ? _c("td", [
           _c("input", {
             directives: [
               {
                 name: "model",
                 rawName: "v-model.number",
-                value: _vm.services,
-                expression: "services",
+                value: _vm.products,
+                expression: "products",
                 modifiers: { number: true }
               }
             ],
             staticClass: "input",
             attrs: { type: "text" },
-            domProps: { value: _vm.services },
+            domProps: { value: _vm.products },
             on: {
               input: function($event) {
                 if ($event.target.composing) {
                   return
                 }
-                _vm.services = _vm._n($event.target.value)
+                _vm.products = _vm._n($event.target.value)
               },
               blur: function($event) {
                 _vm.$forceUpdate()
@@ -47634,190 +47697,175 @@ var render = function() {
             }
           })
         ])
-      ])
-    ]),
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model.number",
-            value: _vm.products,
-            expression: "products",
-            modifiers: { number: true }
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.products },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    !_vm.show ? _c("td", [_vm._v(_vm._s(_vm.totalRev))]) : _vm._e(),
+    _vm._v(" "),
+    !_vm.show
+      ? _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.extra,
+                expression: "extra",
+                modifiers: { number: true }
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "text" },
+            domProps: { value: _vm.extra },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.extra = _vm._n($event.target.value)
+              },
+              blur: function($event) {
+                _vm.$forceUpdate()
+              }
             }
-            _vm.products = _vm._n($event.target.value)
-          },
-          blur: function($event) {
-            _vm.$forceUpdate()
-          }
-        }
-      })
-    ]),
+          })
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.totalRev))]),
-    _vm._v(" "),
-    _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model.number",
-            value: _vm.extra,
-            expression: "extra",
-            modifiers: { number: true }
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.extra },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    !_vm.show
+      ? _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.preBooked,
+                expression: "preBooked",
+                modifiers: { number: true }
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "text" },
+            domProps: { value: _vm.preBooked },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.preBooked = _vm._n($event.target.value)
+              },
+              blur: function($event) {
+                _vm.$forceUpdate()
+              }
             }
-            _vm.extra = _vm._n($event.target.value)
-          },
-          blur: function($event) {
-            _vm.$forceUpdate()
-          }
-        }
-      })
-    ]),
+          })
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model.number",
-            value: _vm.preBooked,
-            expression: "preBooked",
-            modifiers: { number: true }
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.preBooked },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    !_vm.show
+      ? _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.sick,
+                expression: "sick",
+                modifiers: { number: true }
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "text" },
+            domProps: { value: _vm.sick },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.sick = _vm._n($event.target.value)
+              },
+              blur: function($event) {
+                _vm.$forceUpdate()
+              }
             }
-            _vm.preBooked = _vm._n($event.target.value)
-          },
-          blur: function($event) {
-            _vm.$forceUpdate()
-          }
-        }
-      })
-    ]),
+          })
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model.number",
-            value: _vm.sick,
-            expression: "sick",
-            modifiers: { number: true }
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.sick },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    !_vm.show
+      ? _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model.number",
+                value: _vm.tips,
+                expression: "tips",
+                modifiers: { number: true }
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "text" },
+            domProps: { value: _vm.tips },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.tips = _vm._n($event.target.value)
+              },
+              blur: function($event) {
+                _vm.$forceUpdate()
+              }
             }
-            _vm.sick = _vm._n($event.target.value)
-          },
-          blur: function($event) {
-            _vm.$forceUpdate()
-          }
-        }
-      })
-    ]),
+          })
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model.number",
-            value: _vm.tips,
-            expression: "tips",
-            modifiers: { number: true }
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.tips },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
+    !_vm.show ? _c("td", [_c("strong", [_vm._v(_vm._s(_vm.wage))])]) : _vm._e(),
+    _vm._v(" "),
+    !_vm.show
+      ? _c("td", [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.notes,
+                expression: "notes"
+              }
+            ],
+            staticClass: "input",
+            attrs: { type: "text" },
+            domProps: { value: _vm.notes },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.notes = $event.target.value
+              }
             }
-            _vm.tips = _vm._n($event.target.value)
-          },
-          blur: function($event) {
-            _vm.$forceUpdate()
-          }
-        }
-      })
-    ]),
+          })
+        ])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [_c("strong", [_vm._v(_vm._s(_vm.wage))])]),
+    _vm.show
+      ? _c("td", [_vm._v(_vm._s(_vm.basicSalary.toFixed(2)))])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.notes,
-            expression: "notes"
-          }
-        ],
-        staticClass: "input",
-        attrs: { type: "text" },
-        domProps: { value: _vm.notes },
-        on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.notes = $event.target.value
-          }
-        }
-      })
-    ]),
+    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.extra))]) : _vm._e(),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.basicSalary))]),
+    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.tips))]) : _vm._e(),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.extra))]),
+    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.totalSickValue))]) : _vm._e(),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.tips))]),
+    _vm.show
+      ? _c("td", [_vm._v(_vm._s(_vm.commissionAchieved.toFixed(2)))])
+      : _vm._e(),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.sick))]),
+    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.wage))]) : _vm._e(),
     _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.commissionAchieved))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.wage))]),
-    _vm._v(" "),
-    _c("td", [_vm._v(_vm._s(_vm.notes))])
+    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.notes))]) : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -47845,11 +47893,47 @@ var render = function() {
       "table",
       { staticClass: "table is-striped" },
       [
-        _vm._m(0),
+        _c("tr", [
+          _c("th", [_vm._v("Name")]),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Services")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Products")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Total Rev")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Pre Booked Hols")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Sick Days")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Wage")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Basic")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Sick")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Commission")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Total")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e()
+        ]),
         _vm._v(" "),
         _vm._l(_vm.employees, function(employee, index) {
           return employee.salon == "Jakata"
-            ? _c("staff-member", { attrs: { employee: employee } })
+            ? _c("staff-member", {
+                attrs: { employee: employee, show: _vm.show }
+              })
             : _vm._e()
         })
       ],
@@ -47862,84 +47946,59 @@ var render = function() {
       "table",
       { staticClass: "table is-narrow" },
       [
-        _vm._m(1),
+        _c("tr", [
+          _c("th", [_vm._v("Name")]),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Services")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Products")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Total Rev")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Pre Booked Hols")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Sick Days")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Wage")]) : _vm._e(),
+          _vm._v(" "),
+          !_vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Basic")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Sick")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Commission")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Total")]) : _vm._e(),
+          _vm._v(" "),
+          _vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e()
+        ]),
         _vm._v(" "),
         _vm._l(_vm.employees, function(employee, index) {
           return employee.salon == "PK"
-            ? _c("staff-member", { attrs: { employee: employee } })
+            ? _c("staff-member", {
+                attrs: { employee: employee, show: _vm.show }
+              })
             : _vm._e()
         })
       ],
       2
-    )
+    ),
+    _vm._v(" "),
+    _c("button", { staticClass: "button", on: { click: _vm.toggleView } }, [
+      _vm._v("Toggle View")
+    ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Name")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Services")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Products")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Total Rev")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Extras")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Pre Booked Hols")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Sick Days")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Tips")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Wage")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Notes")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Basic")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Extras")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Tips")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Sick")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Commission")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Total")]),
-      _vm._v(" "),
-      _c("th", { staticClass: "hidden" }, [_vm._v("Notes")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("Name")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Services")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Products")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Total Rev")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Pre Booked Hols")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Sick Days")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Tips")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Wage")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Notes")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
