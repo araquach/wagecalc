@@ -47464,11 +47464,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         toggleView: function toggleView() {
-            if (this.show == 'false') {
-                this.show = 'true';
+            if (this.show === false) {
+                this.show = true;
+            } else if (this.show === true) {
+                this.show = false;
             }
-
-            this.show = 'false';
         }
     },
 
@@ -47635,237 +47635,427 @@ var render = function() {
   return _c("tr", [
     _c("td", [_vm._v(_vm._s(_vm.fullName()))]),
     _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("div", { staticClass: "field" }, [
-            _c("div", { staticClass: "control" }, [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model.number",
-                    value: _vm.services,
-                    expression: "services",
-                    modifiers: { number: true }
-                  }
-                ],
-                staticClass: "input",
-                attrs: { type: "text" },
-                domProps: { value: _vm.services },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.services = _vm._n($event.target.value)
-                  },
-                  blur: function($event) {
-                    _vm.$forceUpdate()
-                  }
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("div", { staticClass: "field" }, [
+          _c("div", { staticClass: "control" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model.number",
+                  value: _vm.services,
+                  expression: "services",
+                  modifiers: { number: true }
                 }
-              })
-            ])
+              ],
+              staticClass: "input",
+              attrs: { type: "text" },
+              domProps: { value: _vm.services },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.services = _vm._n($event.target.value)
+                },
+                blur: function($event) {
+                  _vm.$forceUpdate()
+                }
+              }
+            })
           ])
         ])
-      : _vm._e(),
+      ]
+    ),
     _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.products,
-                expression: "products",
-                modifiers: { number: true }
-              }
-            ],
-            staticClass: "input",
-            attrs: { type: "text" },
-            domProps: { value: _vm.products },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.products = _vm._n($event.target.value)
-              },
-              blur: function($event) {
-                _vm.$forceUpdate()
-              }
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.products,
+              expression: "products",
+              modifiers: { number: true }
             }
-          })
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    !_vm.show ? _c("td", [_vm._v(_vm._s(_vm.totalRev))]) : _vm._e(),
-    _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.extra,
-                expression: "extra",
-                modifiers: { number: true }
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.products },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
               }
-            ],
-            staticClass: "input",
-            attrs: { type: "text" },
-            domProps: { value: _vm.extra },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.extra = _vm._n($event.target.value)
-              },
-              blur: function($event) {
-                _vm.$forceUpdate()
-              }
+              _vm.products = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
             }
-          })
-        ])
-      : _vm._e(),
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.preBooked,
-                expression: "preBooked",
-                modifiers: { number: true }
-              }
-            ],
-            staticClass: "input",
-            attrs: { type: "text" },
-            domProps: { value: _vm.preBooked },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.preBooked = _vm._n($event.target.value)
-              },
-              blur: function($event) {
-                _vm.$forceUpdate()
-              }
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.totalRev))]
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.extra,
+              expression: "extra",
+              modifiers: { number: true }
             }
-          })
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.sick,
-                expression: "sick",
-                modifiers: { number: true }
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.extra },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
               }
-            ],
-            staticClass: "input",
-            attrs: { type: "text" },
-            domProps: { value: _vm.sick },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.sick = _vm._n($event.target.value)
-              },
-              blur: function($event) {
-                _vm.$forceUpdate()
-              }
+              _vm.extra = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
             }
-          })
-        ])
-      : _vm._e(),
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model.number",
-                value: _vm.tips,
-                expression: "tips",
-                modifiers: { number: true }
-              }
-            ],
-            staticClass: "input",
-            attrs: { type: "text" },
-            domProps: { value: _vm.tips },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.tips = _vm._n($event.target.value)
-              },
-              blur: function($event) {
-                _vm.$forceUpdate()
-              }
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.preBooked,
+              expression: "preBooked",
+              modifiers: { number: true }
             }
-          })
-        ])
-      : _vm._e(),
-    _vm._v(" "),
-    !_vm.show ? _c("td", [_c("strong", [_vm._v(_vm._s(_vm.wage))])]) : _vm._e(),
-    _vm._v(" "),
-    !_vm.show
-      ? _c("td", [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.notes,
-                expression: "notes"
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.preBooked },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
               }
-            ],
-            staticClass: "input",
-            attrs: { type: "text" },
-            domProps: { value: _vm.notes },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.notes = $event.target.value
-              }
+              _vm.preBooked = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
             }
-          })
-        ])
-      : _vm._e(),
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
-    _vm.show
-      ? _c("td", [_vm._v(_vm._s(_vm.basicSalary.toFixed(2)))])
-      : _vm._e(),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.sick,
+              expression: "sick",
+              modifiers: { number: true }
+            }
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.sick },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.sick = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
+            }
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
-    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.extra))]) : _vm._e(),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model.number",
+              value: _vm.tips,
+              expression: "tips",
+              modifiers: { number: true }
+            }
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.tips },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.tips = _vm._n($event.target.value)
+            },
+            blur: function($event) {
+              _vm.$forceUpdate()
+            }
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
-    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.tips))]) : _vm._e(),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [_c("strong", [_vm._v(_vm._s(_vm.wage))])]
+    ),
     _vm._v(" "),
-    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.totalSickValue))]) : _vm._e(),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.show,
+            expression: "!show"
+          }
+        ]
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.notes,
+              expression: "notes"
+            }
+          ],
+          staticClass: "input",
+          attrs: { type: "text" },
+          domProps: { value: _vm.notes },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.notes = $event.target.value
+            }
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
-    _vm.show
-      ? _c("td", [_vm._v(_vm._s(_vm.commissionAchieved.toFixed(2)))])
-      : _vm._e(),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.basicSalary.toFixed(2)))]
+    ),
     _vm._v(" "),
-    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.wage))]) : _vm._e(),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.extra))]
+    ),
     _vm._v(" "),
-    _vm.show ? _c("td", [_vm._v(_vm._s(_vm.notes))]) : _vm._e()
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.tips))]
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.totalSickValue))]
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.commissionAchieved.toFixed(2)))]
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.wage))]
+    ),
+    _vm._v(" "),
+    _c(
+      "td",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.show,
+            expression: "show"
+          }
+        ]
+      },
+      [_vm._v(_vm._s(_vm.notes))]
+    )
   ])
 }
 var staticRenderFns = []
@@ -47891,42 +48081,250 @@ var render = function() {
     _vm._v(" "),
     _c(
       "table",
-      { staticClass: "table is-striped" },
+      { staticClass: "table" },
       [
         _c("tr", [
           _c("th", [_vm._v("Name")]),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Services")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Services")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Products")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Products")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Total Rev")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Total Rev")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Pre Booked Hols")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Pre Booked Hols")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Sick Days")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Sick Days")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Wage")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Wage")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Basic")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Basic")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Sick")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Sick")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Commission")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Commission")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Total")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Total")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e()
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          )
         ]),
         _vm._v(" "),
         _vm._l(_vm.employees, function(employee, index) {
@@ -47944,42 +48342,250 @@ var render = function() {
     _vm._v(" "),
     _c(
       "table",
-      { staticClass: "table is-narrow" },
+      { staticClass: "table" },
       [
         _c("tr", [
           _c("th", [_vm._v("Name")]),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Services")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Services")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Products")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Products")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Total Rev")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Total Rev")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Pre Booked Hols")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Pre Booked Hols")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Sick Days")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Sick Days")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Wage")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Wage")]
+          ),
           _vm._v(" "),
-          !_vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Basic")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Basic")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Extras")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Tips")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Sick")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Sick")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Commission")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Commission")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Total")]) : _vm._e(),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Total")]
+          ),
           _vm._v(" "),
-          _vm.show ? _c("th", [_vm._v("Notes")]) : _vm._e()
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          )
         ]),
         _vm._v(" "),
         _vm._l(_vm.employees, function(employee, index) {

@@ -1,23 +1,23 @@
 <template>
 	<tr>
 		<td>{{ fullName() }}</td>
-        <td v-if="!show"><div class="field"><div class="control"><input class="input" type="text" v-model.number="services"></div></div></td>
-        <td v-if="!show"><input class="input" type="text" v-model.number="products"></td>
-        <td v-if="!show">{{ totalRev }}</td>
-        <td v-if="!show"><input class="input" type="text" v-model.number="extra"></td>
-        <td v-if="!show"><input class="input" type="text" v-model.number="preBooked"></td>
-        <td v-if="!show"><input class="input" type="text" v-model.number="sick"></td>
-        <td v-if="!show"><input class="input" type="text" v-model.number="tips"></td>
-        <td v-if="!show"><strong>{{ wage }}</strong></td>
-        <td v-if="!show"><input class="input" type="text" v-model="notes"></td>
+        <td v-show="!show"><div class="field"><div class="control"><input class="input" type="text" v-model.number="services"></div></div></td>
+        <td v-show="!show"><input class="input" type="text" v-model.number="products"></td>
+        <td v-show="!show">{{ totalRev }}</td>
+        <td v-show="!show"><input class="input" type="text" v-model.number="extra"></td>
+        <td v-show="!show"><input class="input" type="text" v-model.number="preBooked"></td>
+        <td v-show="!show"><input class="input" type="text" v-model.number="sick"></td>
+        <td v-show="!show"><input class="input" type="text" v-model.number="tips"></td>
+        <td v-show="!show"><strong>{{ wage }}</strong></td>
+        <td v-show="!show"><input class="input" type="text" v-model="notes"></td>
         
-        <td v-if="show">{{ basicSalary.toFixed(2) }}</td>
-        <td v-if="show">{{ extra }}</td>
-        <td v-if="show">{{ tips }}</td>
-        <td v-if="show">{{ totalSickValue }}</td>
-        <td v-if="show">{{ commissionAchieved.toFixed(2) }}</td>
-        <td v-if="show">{{ wage }}</td>
-        <td v-if="show">{{ notes }}</td>
+        <td v-show="show">{{ basicSalary.toFixed(2) }}</td>
+        <td v-show="show">{{ extra }}</td>
+        <td v-show="show">{{ tips }}</td>
+        <td v-show="show">{{ totalSickValue }}</td>
+        <td v-show="show">{{ commissionAchieved.toFixed(2) }}</td>
+        <td v-show="show">{{ wage }}</td>
+        <td v-show="show">{{ notes }}</td>
 	</tr>
 </template>
 
