@@ -4,7 +4,7 @@
         <table class="table">
             <tr>
                 <th>Name</th>
-                <th v-show="!show">Poo</th>
+                <th v-show="!show">Services</th>
                 <th v-show="!show">Products</th>
                 <th v-show="!show">Total Rev</th>
                 <th v-show="!show">Extras</th>

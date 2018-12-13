@@ -10,12 +10,12 @@
         <title>{{ config('app.name', 'Wage Calculator') }}</title>
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
 
         <!-- Fonts -->
 
         <!-- Styles -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <section id="app" class="section">
