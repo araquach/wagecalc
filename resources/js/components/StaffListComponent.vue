@@ -25,6 +25,7 @@
             <staff-member v-for="(employee, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'Jakata'"></staff-member>
         </table>
 
+        
         <h2 class="title">PK</h2>
         <table class="table">
             <tr>

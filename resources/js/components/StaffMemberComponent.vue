@@ -20,7 +20,6 @@
         <td v-show="show">{{ notes }}</td>
 	</tr>
 </template>
-
 <script> 
 
     export default {
