@@ -21,7 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/staff', 'StaffMemberController@index');
 Route::get('/staff/create', 'StaffMemberController@create');
 Route::post('/staff/create', 'StaffMemberController@store');
-Route::get('/staff/{staff}', 'StaffMemberController@edit');
+Route::get('/staff/{staff}/edit', 'StaffMemberController@edit');
 Route::patch('/staff/{staff}', 'StaffMemberController@update');
 
 Route::get('/calculate', 'StaffMemberController@calculate');
