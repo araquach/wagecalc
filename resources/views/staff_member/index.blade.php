@@ -23,7 +23,7 @@
 		<tbody>	
 			@foreach($staffMembersJAK as $staffJAK)
 			<tr>
-				<td><a href="/">{{ $staffJAK->first_name }} {{ $staffJAK->last_name }}</a></td>
+				<td><a href="/staff/{{ $staffJAK->id }}/edit">{{ $staffJAK->first_name }} {{ $staffJAK->last_name }}</a></td>
 				<td>{{ $staffJAK->birth_date }}</td>
 				<td>{{ $staffJAK->salon }}</td>
 				<td>{{ $staffJAK->position }}</td>
@@ -57,7 +57,7 @@
 		<tbody>
 		@foreach($staffMembersPK as $staffPK)
 			<tr>
-				<td><a href="">{{ $staffPK->first_name }} {{ $staffPK->last_name }}</a></td>
+				<td><a href="/staff/{{ $staffPK->id }}/edit">{{ $staffPK->first_name }} {{ $staffPK->last_name }}</a></td>
 				<td>{{ $staffPK->birth_date }}</td>
 				<td>{{ $staffPK->salon }}</td>
 				<td>{{ $staffPK->position }}</td>
