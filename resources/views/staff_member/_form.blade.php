@@ -92,8 +92,17 @@
 			</div>
 			{!! $errors->first('percentage_return', '<div class="errorMessage">:message</div>') !!}
 			</div>
+			
+			<div class="field">
+			{!! Form::label('active', 'Active', ['class' => 'label']) !!}
+			<div class="control">
+				{!! Form::label('active', 'Active', ['class' => 'radio']) !!}
+				{!! Form::radio('active', '1', old('active'), ['class' => 'radio']) !!}
+				{!! Form::label('active', 'Inactive', ['class' => 'radio']) !!}
+				{!! Form::radio('active', '0', old('active'), ['class' => 'radio']) !!}
+			</div>
+			</div>
 
-			{!! Form::hidden('active', 1) !!}
 
 
 
