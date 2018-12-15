@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
 	<h1 class="heading">Staff Members</h1>
+	
+
+	@if($staffJAK > 0)
 
 	<h2 class="heading">Jakata</h2>
 
@@ -38,6 +41,10 @@
 
 	</table>
 
+	@endif
+
+	@if($staffPK > 0)
+
 	<h2 class="heading">PK</h2>
 
 	<table class="table">
@@ -70,6 +77,10 @@
 		@endforeach
 		</tbody>
 	</table>
+	@endif
+
 </div>
+
+
 
 @endsection
