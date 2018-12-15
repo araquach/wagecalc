@@ -5,7 +5,7 @@
 	<h1 class="heading">Staff Members</h1>
 	
 
-	@if($staffJAK > 0)
+	@if(count($staffMembersJAK) > 0)
 
 	<h2 class="heading">Jakata</h2>
 
@@ -41,9 +41,15 @@
 
 	</table>
 
+	@else
+
+	<p>There are no Jakata Staff members added</p>
+	<a href="staff/create">Add staff member</a>
+
+
 	@endif
 
-	@if($staffPK > 0)
+	@if(count($staffMembersPK) > 0)
 
 	<h2 class="heading">PK</h2>
 
@@ -77,6 +83,12 @@
 		@endforeach
 		</tbody>
 	</table>
+
+	@else
+
+	<p>There are no PK Staff members added</p>
+	<a href="staff/create">Add staff member</a>
+
 	@endif
 
 </div>
