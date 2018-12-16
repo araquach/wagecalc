@@ -38906,14 +38906,16 @@ var render = function() {
         2
       ),
       _vm._v(" "),
-      _c("button", { staticClass: "button", on: { click: _vm.toggleView } }, [
-        _vm._v("Toggle View")
-      ]),
+      _c(
+        "button",
+        { staticClass: "button is-primary", on: { click: _vm.toggleView } },
+        [_vm._v("Toggle View")]
+      ),
       _vm._v(" "),
       _c(
         "download-csv",
         {
-          staticClass: "btn btn-default",
+          staticClass: "button is-link",
           attrs: {
             data: _vm.json_data,
             fields: _vm.json_fields,
@@ -38921,11 +38923,7 @@ var render = function() {
             name: "wages.csv"
           }
         },
-        [
-          _vm._v(
-            "\n     \n        Download Excel (you can customize this with html code!)\n     \n    "
-          )
-        ]
+        [_vm._v("\n     \n        Download CSV\n     \n    ")]
       )
     ],
     1

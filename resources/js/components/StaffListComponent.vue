@@ -51,16 +51,16 @@
             <staff-member v-for="(employee, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'PK'"></staff-member>
         </table>
 
-        <button class="button" @click="toggleView">Toggle View</button>
+        <button class="button is-primary" @click="toggleView">Toggle View</button>
 
         <download-csv
-            class   = "btn btn-default"
+            class   = "button is-link"
             :data   = "json_data"
             :fields = "json_fields"
             type    = "csv"
             name    = "wages.csv">
          
-            Download Excel (you can customize this with html code!)
+            Download CSV
          
         </download-csv> 
 
