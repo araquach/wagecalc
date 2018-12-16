@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+window.VueJson = require('vue-json-excel')
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -21,6 +22,7 @@ Vue.component('staff-member', require('./components/StaffMemberComponent.vue'));
 Vue.component('user', require('./components/practice/User.vue'));
 Vue.component('user-detail', require('./components/practice/UserDetail.vue'));
 Vue.component('user-edit', require('./components/practice/UserEdit.vue'));
+Vue.component('downloadCsv', VueJson);
 
 const app = new Vue({
     el: '#app'
