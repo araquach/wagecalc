@@ -50046,6 +50046,7 @@ module.exports = function(module) {
  */
 
 __webpack_require__("./resources/js/bootstrap.js");
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"node_modules/bulma-calendar/dist/js/bulma-calendar.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 window.VueJson = __webpack_require__("./node_modules/vue-json-excel/JsonExcel.vue");

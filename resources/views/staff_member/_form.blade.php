@@ -1,4 +1,11 @@
 
+			<div class="input-group date datepicker" data-provide="datepicker">
+			    <input type="text" class="form-control">
+			    <div class="input-group-addon">
+			        <span class="glyphicon glyphicon-th"></span>
+			    </div>
+			</div>
+
 			<div class="field">
 				{!! Form::label('first_name', 'First Name', ['class' => 'label']) !!}
 				<div class="control">
@@ -102,8 +109,6 @@
 				{!! Form::radio('active', '0', old('active'), ['class' => 'radio']) !!}
 			</div>
 			</div>
-
-
 
 
 

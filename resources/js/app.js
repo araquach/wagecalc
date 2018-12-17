@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('node_modules/bulma-calendar/dist/js/bulma-calendar.js');
 
 window.Vue = require('vue');
 window.VueJson = require('vue-json-excel')
