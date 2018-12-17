@@ -22,7 +22,7 @@
                 <th v-show="show">Total</th>
                 <th v-show="show">Notes</th>
             </tr>
-            <staff-member v-for="(employee, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'Jakata'"></staff-member>
+            <staff-member v-for="(employee, key, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'Jakata'"></staff-member>
         </table>
 
         
@@ -48,7 +48,7 @@
                 <th v-show="show">Total</th>
                 <th v-show="show">Notes</th>
             </tr>
-            <staff-member v-for="(employee, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'PK'"></staff-member>
+            <staff-member v-for="(employee, key, index) in employees" :employee="employee" :show="show" v-if="employee.salon == 'PK'"></staff-member>
         </table>
 
         <button class="button is-primary" @click="toggleView">Toggle View</button>

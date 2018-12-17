@@ -1,11 +1,3 @@
-
-			<div class="input-group date datepicker" data-provide="datepicker">
-			    <input type="text" class="form-control">
-			    <div class="input-group-addon">
-			        <span class="glyphicon glyphicon-th"></span>
-			    </div>
-			</div>
-
 			<div class="field">
 				{!! Form::label('first_name', 'First Name', ['class' => 'label']) !!}
 				<div class="control">
@@ -26,7 +18,7 @@
 			<div class="field">
 				{!! Form::label('birth_date', 'Birth Date', ['class' => 'label']) !!}
 				<div class="control">
-					{!! Form::text('birth_date', old('birth_date'), ['class' => 'input']) !!}
+					{!! Form::date('birth_date', old('birth_date'), ['class' => 'input', 'dateFormat' => 'DD-MM-YYYY']) !!}
 				</div>
 				{!! $errors->first('birth_date', '<div class="errorMessage">:message</div>') !!}
 			</div>

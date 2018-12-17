@@ -5,11 +5,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-require('node_modules/bulma-calendar/dist/js/bulma-calendar.js');
+import bulmaCalendar from 'bulma-calendar/dist/js/bulma-calendar';
 
+require('./bootstrap');
 window.Vue = require('vue');
 window.VueJson = require('vue-json-excel')
+
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -27,4 +29,15 @@ Vue.component('downloadCsv', VueJson);
 
 const app = new Vue({
     el: '#app'
+});
+
+// Initialize all input of date type.
+const calendars = bulmaCalendar.attach('[type="date"]');
+
+// Loop on each calendar initialized
+calendars.forEach(calendar => {
+	// Add listener to date:selected event
+	calendar.on('date:selected', date => {
+		console.log(date);
+	});
 });
