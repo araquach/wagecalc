@@ -14,14 +14,19 @@
 			{!! $errors->first('last_name', '<div class="errorMessage">:message</div>') !!}
 			</div>
 
-			
 			<div class="field">
-				{!! Form::label('birth_date', 'Birth Date', ['class' => 'label']) !!}
-				<div class="control">
-					{!! Form::date('birth_date', old('birth_date'), ['class' => 'input', 'dateFormat' => 'DD-MM-YYYY']) !!}
-				</div>
-				{!! $errors->first('birth_date', '<div class="errorMessage">:message</div>') !!}
-			</div>
+	            <label for="birth_date" class="label">{{ __('Birth Date') }}</label>
+	            <div class="control">
+	                <input type="date" class="input" name="birth_date" value="@{{ niceDate }}" required autofocus>
+
+	                <button ref='calendarTrigger' type='button'>Change</button>
+	                @if ($errors->has('birth_date'))
+	                    <span role="alert">
+	                        <strong>{{ $errors->first('birth_date') }}</strong>
+	                    </span>
+	                @endif
+	            </div>
+	        </div>
 
 			<div class="field">
 				{!! Form::label('salon', 'Salon', ['class' => 'label']) !!}

@@ -5,9 +5,26 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+window.axios = require('axios');
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+/**
+ * Next we will register the CSRF Token as a common header with Axios so that
+ * all outgoing HTTP requests automatically have it attached. This is just
+ * a simple convenience so we don't have to attach every token manually.
+ */
+
+let token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
 import bulmaCalendar from 'bulma-calendar/dist/js/bulma-calendar';
 
-require('./bootstrap');
 window.Vue = require('vue');
 window.VueJson = require('vue-json-excel')
 
@@ -27,17 +44,25 @@ Vue.component('user-detail', require('./components/practice/UserDetail.vue'));
 Vue.component('user-edit', require('./components/practice/UserEdit.vue'));
 Vue.component('downloadCsv', VueJson);
 
+
 const app = new Vue({
-    el: '#app'
-});
-
-// Initialize all input of date type.
-const calendars = bulmaCalendar.attach('[type="date"]');
-
-// Loop on each calendar initialized
-calendars.forEach(calendar => {
-	// Add listener to date:selected event
-	calendar.on('date:selected', date => {
-		console.log(date);
-	});
+  el: '#app',
+  data() {
+    return {
+      date: '',
+    }
+  },
+  mounted() {
+    const calendar = bulmaCalendar.attach(this.$refs.calendarTrigger, {
+      startDate: this.date,
+    })[0]
+    calendar.on('date:selected', e => (this.date = e.start || null))
+  },
+  computed: {
+    niceDate() {
+      if (this.date) {
+        return this.date.toLocaleDateString()
+      }
+    }
+  }
 });
