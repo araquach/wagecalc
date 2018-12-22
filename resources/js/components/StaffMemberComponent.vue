@@ -84,7 +84,13 @@
             },
 
             basicSalary() {
+                if(this.employee.active == 1)
+
                 return ((this.dailyWage * this.employee.days_pw) * 52) / 12;
+
+                else
+
+                return 0;
             },
 
             wagePcm() {
@@ -134,7 +140,13 @@
 
                  var wage = this.basicSalary - this.totalSickValue + this.tips + this.extra;
                  
+                 if(this.employee.active == 1)  
+
                  return wage.toFixed(2);
+
+                 else
+
+                return this.extra;
             }
         
         }

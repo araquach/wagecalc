@@ -2227,7 +2227,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return this.employee.hours_pd * this.employee.basic_wage;
         },
         basicSalary: function basicSalary() {
-            return this.dailyWage * this.employee.days_pw * 52 / 12;
+            if (this.employee.active == 1) return this.dailyWage * this.employee.days_pw * 52 / 12;else return 0;
         },
         wagePcm: function wagePcm() {
             return this.employee.hours_pd * this.employee.days_pw * 52 / 12 * this.employee.basic_wage;
@@ -2270,7 +2270,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             var wage = this.basicSalary - this.totalSickValue + this.tips + this.extra;
 
-            return wage.toFixed(2);
+            if (this.employee.active == 1) return wage.toFixed(2);else return this.extra;
         }
     }
 

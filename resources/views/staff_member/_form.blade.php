@@ -17,7 +17,7 @@
 			<div class="field">
 	            <label for="birth_date" class="label">{{ __('Birth Date') }}</label>
 	            <div class="control">
-	                <input type="date" class="input" name="birth_date" value="@{{ niceDate }}" required autofocus>
+	                <input type="text" class="input" name="birth_date">
 
 	                <button ref='calendarTrigger' type='button'>Change</button>
 	                @if ($errors->has('birth_date'))

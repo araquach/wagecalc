@@ -23,6 +23,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "vue-json-excel": "^0.2.96"
+        "vue-json-excel": "^0.2.96",
+        "vuejs-datepicker": "^1.5.4"
     }
 }
