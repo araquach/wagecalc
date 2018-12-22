@@ -1,3 +1,5 @@
+			<datepicker></datepicker>
+
 			<div class="field">
 				{!! Form::label('first_name', 'First Name', ['class' => 'label']) !!}
 				<div class="control">
@@ -18,6 +20,8 @@
 	            <label for="birth_date" class="label">{{ __('Birth Date') }}</label>
 	            <div class="control">
 	                <input type="text" class="input" name="birth_date">
+
+
 
 	                <button ref='calendarTrigger' type='button'>Change</button>
 	                @if ($errors->has('birth_date'))

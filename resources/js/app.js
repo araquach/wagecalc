@@ -26,7 +26,7 @@ if (token) {
 import bulmaCalendar from 'bulma-calendar/dist/js/bulma-calendar';
 
 window.Vue = require('vue');
-window.VueJson = require('vue-json-excel')
+window.VueJson = require('vue-json-excel');
 
 
 
@@ -43,26 +43,9 @@ Vue.component('user', require('./components/practice/User.vue'));
 Vue.component('user-detail', require('./components/practice/UserDetail.vue'));
 Vue.component('user-edit', require('./components/practice/UserEdit.vue'));
 Vue.component('downloadCsv', VueJson);
+Vue.component('datepicker', require('./components/DatePicker.vue'));
 
 
 const app = new Vue({
-  el: '#app',
-  data() {
-    return {
-      date: '',
-    }
-  },
-  mounted() {
-    const calendar = bulmaCalendar.attach(this.$refs.calendarTrigger, {
-      startDate: this.date,
-    })[0]
-    calendar.on('date:selected', e => (this.date = e.start || null))
-  },
-  computed: {
-    niceDate() {
-      if (this.date) {
-        return this.date.toLocaleDateString()
-      }
-    }
-  }
+  el: '#app'
 });
