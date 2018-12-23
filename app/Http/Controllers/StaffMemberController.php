@@ -70,7 +70,7 @@ class StaffMemberController extends Controller
 	 * @param  StaffMember
 	 * @return [type]
 	 */
-	public function update(StaffMemberFormRequest $request, StaffMember $staff)
+	public function update(StaffMemberFormRequest $request, Staff $staff)
 	{
 		$staff->update($request->all());
 

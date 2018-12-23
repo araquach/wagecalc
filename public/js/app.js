@@ -2016,24 +2016,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+
+				props: ['oldDate'],
+
 				data: function data() {
 								return {
 												date: ''
 								};
 				},
-
-
-				methods: {
-								changeDate: function changeDate() {
-												if (this.value == '') return 'Hello';else return this.niceDate;
-								}
-				},
-
 				mounted: function mounted() {
 								var _this = this;
 
 								var calendar = __WEBPACK_IMPORTED_MODULE_0_bulma_calendar_dist_js_bulma_calendar___default.a.attach(this.$refs.calendarTrigger, {
-												startDate: this.date
+												startDate: this.date, showFooter: false
 								})[0];
 								calendar.on('date:selected', function (e) {
 												return _this.date = e.start || null;
@@ -2046,11 +2041,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 												if (this.date) {
 																return this.date.toISOString().split('T')[0];
 												} else {
-																return 'Enter a Date';
+																return this.oldDate;
 												}
 								}
 				}
-
 });
 
 /***/ }),
@@ -23586,7 +23580,7 @@ var render = function() {
       _c("input", {
         staticClass: "input",
         attrs: { type: "text", name: "birth_date" },
-        domProps: { value: _vm.changeDate() }
+        domProps: { value: _vm.niceDate }
       }),
       _vm._v(" "),
       _c("button", { ref: "calendarTrigger", attrs: { type: "button" } }, [

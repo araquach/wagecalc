@@ -18,7 +18,7 @@
         <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <section id="app" class="section">
+        <section id="app">
         
             <nav class="navbar is-primary">
                 <div class="container">
