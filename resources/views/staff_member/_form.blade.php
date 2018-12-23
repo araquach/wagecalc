@@ -1,5 +1,3 @@
-			<datepicker></datepicker>
-
 			<div class="field">
 				{!! Form::label('first_name', 'First Name', ['class' => 'label']) !!}
 				<div class="control">
@@ -16,7 +14,16 @@
 			{!! $errors->first('last_name', '<div class="errorMessage">:message</div>') !!}
 			</div>
 
-			<div class="field">
+			{!! Form::label('birth_date', 'Date of Birth', ['class' => 'label']) !!}
+			<datepicker></datepicker>
+
+			@if ($errors->has('birth_date'))
+                <span role="alert">
+                    <strong>{{ $errors->first('birth_date') }}</strong>
+                </span>
+            @endif
+
+			<!-- <div class="field">
 	            <label for="birth_date" class="label">{{ __('Birth Date') }}</label>
 	            <div class="control">
 	                <input type="text" class="input" name="birth_date">
@@ -30,7 +37,7 @@
 	                    </span>
 	                @endif
 	            </div>
-	        </div>
+	        </div> -->
 
 			<div class="field">
 				{!! Form::label('salon', 'Salon', ['class' => 'label']) !!}

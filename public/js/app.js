@@ -2011,10 +2011,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2025,6 +2021,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 												date: ''
 								};
 				},
+
+
+				methods: {
+								changeDate: function changeDate() {
+												if (this.value == '') return 'Hello';else return this.niceDate;
+								}
+				},
+
 				mounted: function mounted() {
 								var _this = this;
 
@@ -2040,7 +2044,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				computed: {
 								niceDate: function niceDate() {
 												if (this.date) {
-																return this.date.toLocaleDateString();
+																return this.date.toISOString().split('T')[0];
+												} else {
+																return 'Enter a Date';
 												}
 								}
 				}
@@ -23579,7 +23585,8 @@ var render = function() {
     _c("div", { staticClass: "control" }, [
       _c("input", {
         staticClass: "input",
-        attrs: { type: "text", name: "birth_date" }
+        attrs: { type: "text", name: "birth_date" },
+        domProps: { value: _vm.changeDate() }
       }),
       _vm._v(" "),
       _c("button", { ref: "calendarTrigger", attrs: { type: "button" } }, [

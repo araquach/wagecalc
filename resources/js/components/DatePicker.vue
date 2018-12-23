@@ -1,12 +1,8 @@
 <template>
     <div class="field">
- 
-        <div class="control">
-            <input type="text" class="input" name="birth_date">
-
-
-
-            <button ref='calendarTrigger' type='button'>Change</button>
+ 		<div class="control">
+            <input type="text" class="input" name="birth_date" :value="changeDate()">
+			<button ref='calendarTrigger' type='button'>Change</button>
         </div>
     </div>
 </template>
@@ -22,6 +18,17 @@
 		      date: '',
 		    }
 		  },
+
+		methods: {
+
+            changeDate() {
+                if(this.value == '')
+                return 'Hello';
+            	else
+            	return this.niceDate;
+            }
+
+        },
 		  
 		mounted() {
 		    const calendar = bulmaCalendar.attach(this.$refs.calendarTrigger, {
@@ -33,7 +40,10 @@
 		computed: {
 		    niceDate() {
 		      if (this.date) {
-		        return this.date.toLocaleDateString()
+		        return this.date.toISOString().split('T')[0];
+		      }
+		      else {
+		      	return 'Enter a Date';
 		      }
 		    }
 		  }
