@@ -2,6 +2,8 @@
 
 @section('content')
 
-<h1>Wage Calculator</h1>
-            
+<div class="container">
+	<h1 class="title is-4">Wage Calculator</h1>
+</div>        
+
 @endsection

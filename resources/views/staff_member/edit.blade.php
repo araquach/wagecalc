@@ -2,32 +2,36 @@
 
 @section('content')
 
-<h2>Update Staff Member</h2>
+<div class="container">
 
-@if(Session::has('message'))
-    <div class="applicationSuccess">
-    {{{ Session::get('message') }}}
-    </div>
-@endif
+	<h2 class="title is-3">Update Staff Member</h2>
 
-<div id="form" >
-	
-	<ul>
-	    @foreach($errors->all() as $error)
-	        <li>{{{ $error }}}</li>
-	    @endforeach
-	</ul>
-	
-	{!! Form::model($staff, ['method' => 'PATCH', 'action' => ['StaffMemberController@update', $staff->id]]) !!}
+	@if(Session::has('message'))
+	    <div class="applicationSuccess">
+	    {{{ Session::get('message') }}}
+	    </div>
+	@endif
+
+	<div id="form" >
 		
-		@include('staff_member._form')
+		<ul>
+		    @foreach($errors->all() as $error)
+		        <li>{{{ $error }}}</li>
+		    @endforeach
+		</ul>
 		
-		<div class="row buttons">
-		{!! Form::submit('Update') !!}
-		</div>
+		{!! Form::model($staff, ['method' => 'PATCH', 'action' => ['StaffMemberController@update', $staff->id]]) !!}
+			
+			@include('staff_member._form')
+			
+			<div class="row buttons">
+			{!! Form::submit('Update') !!}
+			</div>
+			
+		{!! Form::close() !!}
 		
-	{!! Form::close() !!}
-	
-</div><!-- form -->
+	</div><!-- form -->
+
+</div>
 
 @endsection

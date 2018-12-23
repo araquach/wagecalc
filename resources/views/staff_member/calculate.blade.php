@@ -2,6 +2,11 @@
 
 @section('content')
 
-<staff-list></staff-list>
+<div class="container">
+	<h2 class="title is-3">The Calculations</h2>
+
+	<staff-list></staff-list>
+
+</div>
 
 @endsection

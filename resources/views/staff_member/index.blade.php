@@ -2,12 +2,12 @@
 
 @section('content')
 <div class="container">
-	<h1 class="heading">Staff Members</h1>
+	<h1 class="title is-3">Staff Members</h1>
 	
 
 	@if(count($staffMembersJAK) > 0)
 
-	<h2 class="heading">Jakata</h2>
+	<h2 class="title is-5">Jakata</h2>
 
 	<table class="table">
 		<thead>
@@ -51,7 +51,7 @@
 
 	@if(count($staffMembersPK) > 0)
 
-	<h2 class="heading">PK</h2>
+	<h2 class="title is-5">PK</h2>
 
 	<table class="table">
 		<thead>
