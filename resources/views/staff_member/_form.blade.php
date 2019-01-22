@@ -17,7 +17,7 @@
 
 
 
-			<!-- {!! Form::label('birth_date', 'Date of Birth', ['class' => 'label']) !!}
+			{{-- Hidden {!! Form::label('birth_date', 'Date of Birth', ['class' => 'label']) !!}
 			<datepicker :oldDate="{{ $staff->birth_date }}"></datepicker>
 
 			@if ($errors->has('birth_date'))
@@ -26,9 +26,9 @@
                 </span>
             @endif
 
-            {{ $staff->birth_date }} -->
+            {{ $staff->birth_date }} --}}
 
-			<!-- <div class="field">
+			{{-- <div class="field">
 	            <label for="birth_date" class="label">{{ __('Birth Date') }}</label>
 	            <div class="control">
 	                <input type="text" class="input" name="birth_date">
@@ -42,7 +42,7 @@
 	                    </span>
 	                @endif
 	            </div>
-	        </div> -->
+	        </div> --}}
 
 			<div class="field">
 				{!! Form::label('salon', 'Salon', ['class' => 'label']) !!}
