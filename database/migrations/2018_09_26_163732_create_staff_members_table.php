@@ -17,7 +17,7 @@ class CreateStaffMembersTable extends Migration
             $table->increments('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->date('birth_date');
+            // $table->date('birth_date');
             $table->string('salon');
             $table->string('position');
             $table->integer('holiday_entitlement');

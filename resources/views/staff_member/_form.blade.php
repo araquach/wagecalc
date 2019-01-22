@@ -13,8 +13,11 @@
 				</div>
 			{!! $errors->first('last_name', '<div class="errorMessage">:message</div>') !!}
 			</div>
+			
 
-			{!! Form::label('birth_date', 'Date of Birth', ['class' => 'label']) !!}
+
+
+			<!-- {!! Form::label('birth_date', 'Date of Birth', ['class' => 'label']) !!}
 			<datepicker :oldDate="{{ $staff->birth_date }}"></datepicker>
 
 			@if ($errors->has('birth_date'))
@@ -23,7 +26,7 @@
                 </span>
             @endif
 
-            {{ $staff->birth_date }}
+            {{ $staff->birth_date }} -->
 
 			<!-- <div class="field">
 	            <label for="birth_date" class="label">{{ __('Birth Date') }}</label>

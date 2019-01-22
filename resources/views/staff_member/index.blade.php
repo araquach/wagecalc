@@ -13,7 +13,7 @@
 		<thead>
 			<tr>
 				<th>Stylist</th>
-				<th>Birth date</th>
+				<!-- <th>Birth date</th> -->
 				<th>Salon</th>
 				<th>Position</th>
 				<th>Holidays</th>
@@ -27,7 +27,7 @@
 			@foreach($staffMembersJAK as $staffJAK)
 			<tr>
 				<td><a href="/staff/{{ $staffJAK->id }}/edit">{{ $staffJAK->first_name }} {{ $staffJAK->last_name }}</a></td>
-				<td>{{ $staffJAK->birth_date }}</td>
+				<!-- <td>{{ $staffJAK->birth_date }}</td> -->
 				<td>{{ $staffJAK->salon }}</td>
 				<td>{{ $staffJAK->position }}</td>
 				<td>{{ $staffJAK->holiday_entitlement }}</td>
@@ -57,7 +57,7 @@
 		<thead>
 			<tr>
 				<th>Stylist</th>
-				<th>Birth date</th>
+				<!-- <th>Birth date</th> -->
 				<th>Salon</th>
 				<th>Position</th>
 				<th>Holidays</th>
@@ -71,7 +71,7 @@
 		@foreach($staffMembersPK as $staffPK)
 			<tr>
 				<td><a href="/staff/{{ $staffPK->id }}/edit">{{ $staffPK->first_name }} {{ $staffPK->last_name }}</a></td>
-				<td>{{ $staffPK->birth_date }}</td>
+				<!-- <td>{{ $staffPK->birth_date }}</td> -->
 				<td>{{ $staffPK->salon }}</td>
 				<td>{{ $staffPK->position }}</td>
 				<td>{{ $staffPK->holiday_entitlement }}</td>

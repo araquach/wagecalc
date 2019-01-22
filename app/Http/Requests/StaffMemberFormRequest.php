@@ -26,7 +26,7 @@ class StaffMemberFormRequest extends FormRequest
         return [
             'first_name' => 'required',
             'last_name' => 'required',
-            'birth_date' => 'required',
+            // 'birth_date' => 'required',
             'salon' => 'required',
             'position' => 'required',
             'holiday_entitlement' => 'required',
