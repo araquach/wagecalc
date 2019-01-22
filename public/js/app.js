@@ -22965,554 +22965,535 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container", attrs: { id: "main" } },
-    [
-      _c("h2", { staticClass: "title" }, [_vm._v("Jakata")]),
-      _vm._v(" "),
-      _c(
-        "table",
-        { staticClass: "table" },
-        [
-          _c("tr", [
-            _c("th", [_vm._v("Name")]),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Services")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Products")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Total Rev")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Extras")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Pre Booked Hols")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Sick Days")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Tips")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Wage")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Notes")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Basic")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Extras")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Tips")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Sick")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Commission")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Total")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Notes")]
-            )
-          ]),
+  return _c("div", { staticClass: "container", attrs: { id: "main" } }, [
+    _c("h2", { staticClass: "title" }, [_vm._v("Jakata")]),
+    _vm._v(" "),
+    _c(
+      "table",
+      { staticClass: "table" },
+      [
+        _c("tr", [
+          _c("th", [_vm._v("Name")]),
           _vm._v(" "),
-          _vm._l(_vm.employees, function(employee, key, index) {
-            return employee.salon == "Jakata"
-              ? _c("staff-member", {
-                  attrs: { employee: employee, show: _vm.show }
-                })
-              : _vm._e()
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c("h2", { staticClass: "title" }, [_vm._v("PK")]),
-      _vm._v(" "),
-      _c(
-        "table",
-        { staticClass: "table" },
-        [
-          _c("tr", [
-            _c("th", [_vm._v("Name")]),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Services")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Products")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Total Rev")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Extras")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Pre Booked Hols")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Sick Days")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Tips")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Wage")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.show,
-                    expression: "!show"
-                  }
-                ]
-              },
-              [_vm._v("Notes")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Basic")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Extras")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Tips")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Sick")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Commission")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Total")]
-            ),
-            _vm._v(" "),
-            _c(
-              "th",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: _vm.show,
-                    expression: "show"
-                  }
-                ]
-              },
-              [_vm._v("Notes")]
-            )
-          ]),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Services")]
+          ),
           _vm._v(" "),
-          _vm._l(_vm.employees, function(employee, key, index) {
-            return employee.salon == "PK"
-              ? _c("staff-member", {
-                  attrs: { employee: employee, show: _vm.show }
-                })
-              : _vm._e()
-          })
-        ],
-        2
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "button is-primary", on: { click: _vm.toggleView } },
-        [_vm._v("Toggle View")]
-      ),
-      _vm._v(" "),
-      _c(
-        "download-csv",
-        {
-          staticClass: "button is-link",
-          attrs: {
-            data: _vm.json_data,
-            fields: _vm.json_fields,
-            type: "csv",
-            name: "wages.csv"
-          }
-        },
-        [_vm._v("\n     \n        Download CSV\n     \n    ")]
-      )
-    ],
-    1
-  )
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Products")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Total Rev")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Pre Booked Hols")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Sick Days")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Wage")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Basic")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Sick")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Commission")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Total")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.employees, function(employee, key, index) {
+          return employee.salon == "Jakata"
+            ? _c("staff-member", {
+                attrs: { employee: employee, show: _vm.show }
+              })
+            : _vm._e()
+        })
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c("h2", { staticClass: "title" }, [_vm._v("PK")]),
+    _vm._v(" "),
+    _c(
+      "table",
+      { staticClass: "table" },
+      [
+        _c("tr", [
+          _c("th", [_vm._v("Name")]),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Services")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Products")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Total Rev")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Pre Booked Hols")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Sick Days")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Wage")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.show,
+                  expression: "!show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Basic")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Extras")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Tips")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Sick")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Commission")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Total")]
+          ),
+          _vm._v(" "),
+          _c(
+            "th",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.show,
+                  expression: "show"
+                }
+              ]
+            },
+            [_vm._v("Notes")]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._l(_vm.employees, function(employee, key, index) {
+          return employee.salon == "PK"
+            ? _c("staff-member", {
+                attrs: { employee: employee, show: _vm.show }
+              })
+            : _vm._e()
+        })
+      ],
+      2
+    ),
+    _vm._v(" "),
+    _c(
+      "button",
+      { staticClass: "button is-primary", on: { click: _vm.toggleView } },
+      [_vm._v("Toggle View")]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

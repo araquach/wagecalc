@@ -53,7 +53,7 @@
 
         <button class="button is-primary" @click="toggleView">Toggle View</button>
 
-        <download-csv
+        <!-- <download-csv
             class   = "button is-link"
             :data   = "json_data"
             :fields = "json_fields"
@@ -62,7 +62,7 @@
          
             Download CSV
          
-        </download-csv> 
+        </download-csv> --> 
 
     </div>
 </template>
